@@ -78,7 +78,6 @@
     gnome-photos
     gnome-tour
     snapshot
-    xterm
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
