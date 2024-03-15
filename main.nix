@@ -42,7 +42,7 @@
   services.openssh.enable = true;
 
   # who needs a firewall anyways
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
