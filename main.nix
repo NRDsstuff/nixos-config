@@ -11,6 +11,7 @@
       ./autoupdate.nix
       ./virtualization.nix
       ./users.nix
+      ./firewall.nix
       # ./binaries.nix
   ];
   
