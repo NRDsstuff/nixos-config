@@ -124,6 +124,7 @@ with lib;
                 paste-on-select = false;
                 show-indicator = false;
                 wiggle-indicator = true;
+                # window-position = 1; # doesn't do shit (but it's supposed to)
             };
 
             # tray icons
