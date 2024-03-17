@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
-
+let
+    unstable = import <nixos-unstable> { config = { allowUnfree = true; };};
+in
 {
+  imports = [ <home-manager/nixos> ];
+
   # meow
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
@@ -11,13 +15,25 @@
   services.flatpak.enable = true;
   
   # nix pkgs
+  programs = {
+    steam = {
+        enable = true;
+        dedicatedServer.openFirewall = false; # sauce™ servers
+        remotePlay.openFirewall = true; # remote play
+    };
+    nix-ld.enable = true;
+    zsh.enable = true;
+  };
+  
+  # ææææææææ
   environment.systemPackages = (with pkgs; [
     # apps
+    thefuck
+    bun
     tuba
     citra-nightly
     wget
     telegram-desktop
-    steam
     prismlauncher
     natron
     davinci-resolve
@@ -26,10 +42,8 @@
     libsForQt5.kdenlive
     gnome.gnome-software
     nodejs
-    adw-gtk3
     home-manager
     firefox
-    git
     chromium
     immersed-vr
     lollypop
@@ -45,6 +59,7 @@
     dolphin-emu
     zulu8
     libreoffice
+    dconf2nix
   ]) ++ (with pkgs.gnomeExtensions; [
     # gnome extensions
     extension-list
@@ -88,4 +103,15 @@
     hitori # sudoku game
     atomix # puzzle game
   ]);
+  
+  # fonts lol
+  fonts = {
+    packages = with pkgs; [
+      atkinson-hyperlegible
+      noto-fonts-emoji
+      noto-fonts-cjk
+      noto-fonts
+      fira-code-nerdfont
+    ];
+  };
 }
