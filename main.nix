@@ -11,6 +11,7 @@
     ./universal/syncthing.nix
     ./universal/services.nix
     ./universal/misc.nix
+    ./universal/desktop.nix
 
     # replace desktop with device
     ./desktop/import.nix

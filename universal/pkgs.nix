@@ -13,7 +13,7 @@ in
 
   # flatpak 
   services.flatpak.enable = true;
-  system.activationScripts.flathub.text = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
+  system.activationScripts.flathub.text = "${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
   
   # nix pkgs
   programs = {
@@ -30,7 +30,6 @@ in
   # ææææææææ
   environment.systemPackages = (with pkgs; [
     # apps
-    xdg-desktop-portal-gtk
     thefuck
     bun
     tuba
