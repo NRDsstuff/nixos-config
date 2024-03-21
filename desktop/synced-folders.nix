@@ -32,5 +32,10 @@
       path = "/home/nrd/Documents/obsidian/school";
       devices = [ "jabe tefaxyn" "jabe spes" "jabe tablet" ];
     };
+    "obsidian kulup.mp3" = {
+      id = "bytx8-6vgq8";
+      path = "/home/nrd/Documents/obsidian/kulup.mp3";
+      devices = [ "jabe tefaxyn" "jabe spes" "ralue proseros" "ralue tefaxyn" "jabe tablet" ];
+    };
   };
 }

@@ -147,7 +147,7 @@ with lib;
             # pano
             "org/gnome/shell/extensions/pano" = {
                 global-shortcut = [ "<Control><Super>v" ];
-                history-length = 500;
+                history-length = 100;
                 icon-pack = 0;
                 paste-on-select = false;
                 show-indicator = false;

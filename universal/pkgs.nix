@@ -19,6 +19,12 @@ in
   programs = {
     nix-ld.enable = true;
     zsh.enable = true;
+    firefox = {
+      enable = true;
+      preferences = {
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+      };
+    }
   };
   
   # ææææææææ
@@ -31,7 +37,6 @@ in
     prismlauncher
     nodejs
     home-manager
-    firefox
     chromium
     lollypop
     obsidian
@@ -42,6 +47,7 @@ in
     libreoffice
     dconf2nix
     telegram-desktop
+    inkscape
   ]) ++ (with pkgs.gnome; [
     # gnome packages
     gnome-tweaks
@@ -50,7 +56,6 @@ in
   ]) ++ (with pkgs.gnomeExtensions; [
     # gnome extensions
     extension-list
-    steal-my-focus-window
     alphabetical-app-grid
     forge
     app-hider
@@ -62,7 +67,6 @@ in
     mpris-label
     tray-icons-reloaded
     undecorate
-    unmess
     window-is-ready-remover
   ]);
   
@@ -70,26 +74,6 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0" 
   ];
-  
-  # remove bloatware that comes with the DE
-  services.xserver.excludePackages = with pkgs; [
-    xterm
-  ];
-  
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    snapshot
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    gnome-music
-    gedit # text editor
-    epiphany # web browser
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
   
   # fonts lol
   fonts = {

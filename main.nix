@@ -10,12 +10,12 @@
     ./universal/pkgs.nix
     ./universal/syncthing.nix
     ./universal/services.nix
+    ./universal/misc.nix
 
     # desktop
     ./desktop/boot.nix
     ./desktop/disks.nix
     ./desktop/graphics.nix
-    ./desktop/misc.nix
     ./desktop/networking.nix
     ./desktop/pkgs.nix
     ./desktop/synced-folders.nix

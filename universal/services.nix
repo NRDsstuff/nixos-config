@@ -6,17 +6,12 @@
     implementation = "broker";
   };
   
-  # ssh
-  services.openssh.enable = true;
-  
   # CUPS
   services.printing.enable = true;
   
   # audio
   sound.enable = true;
-  hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -24,6 +19,8 @@
     pulse.enable = true;
   };
   
-  # idk
+  # misc
   xdg.portal.enable = true;
+  hardware.bluetooth.enable = true;
+  security.rtkit.enable = true;
 }

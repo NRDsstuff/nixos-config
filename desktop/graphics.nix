@@ -37,11 +37,6 @@
         driSupport32Bit = true;
     };
 
-    # xorg config
-    services.xserver = {
-        enable = true;
-        videoDrivers = [ "nvidia" ];
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
-    };
+    # enable drivers
+    services.xserver.videoDrivers = [ "nvidia" ];
 }
