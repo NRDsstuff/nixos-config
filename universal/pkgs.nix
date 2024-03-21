@@ -24,12 +24,13 @@ in
       preferences = {
         "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
-    }
+    };
   };
   
   # ææææææææ
   environment.systemPackages = (with pkgs; [
     # apps
+    xdg-desktop-portal-gtk
     thefuck
     bun
     tuba

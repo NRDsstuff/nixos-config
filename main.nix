@@ -12,16 +12,8 @@
     ./universal/services.nix
     ./universal/misc.nix
 
-    # desktop
-    ./desktop/boot.nix
-    ./desktop/disks.nix
-    ./desktop/graphics.nix
-    ./desktop/networking.nix
-    ./desktop/pkgs.nix
-    ./desktop/synced-folders.nix
-    ./desktop/virtualization.nix
-
-    # surface
+    # replace desktop with device
+    ./desktop/import.nix
   ];
   
   # This value determines the NixOS release from which the default
