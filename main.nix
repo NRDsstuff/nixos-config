@@ -3,20 +3,25 @@
 {
   # import shit lol
   imports = [
-      ./pkgs.nix
-      ./syncthing.nix
-      ./graphics.nix
-      ./bootloader.nix
-      ./locale.nix
-      ./autoupdate.nix
-      ./virtualization.nix
-      ./users.nix
-      # ./firewall.nix
-      # ./binaries.nix
-      ./services.nix
-      ./networking.nix
-      ./themes.nix
-      ./home-manager.nix
+    # universal
+    ./universal/autoupdate.nix
+    ./universal/locale.nix
+    ./universal/nrd.nix
+    ./universal/pkgs.nix
+    ./universal/syncthing.nix
+    ./universal/services.nix
+
+    # desktop
+    ./desktop/boot.nix
+    ./desktop/disks.nix
+    ./desktop/graphics.nix
+    ./desktop/misc.nix
+    ./desktop/networking.nix
+    ./desktop/pkgs.nix
+    ./desktop/synced-folders.nix
+    ./desktop/virtualization.nix
+
+    # surface
   ];
   
   # This value determines the NixOS release from which the default

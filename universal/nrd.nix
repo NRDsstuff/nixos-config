@@ -1,8 +1,33 @@
-# Home manager configuration for user
-
 {config, lib, pkgs, ...}:
 with lib;
 {
+    # define user
+    users.users.nrd = {
+        isNormalUser = true;
+        description = "NRD";
+        extraGroups = [ "networkmanager" "wheel" ];
+        packages = with pkgs; [
+            adw-gtk3
+            google-cursor
+        ];
+    };
+
+    # make forge STFU
+    services.xserver.displayManager.sessionCommands = ''
+        rm -rf /home/nrd/undefined.bak
+        rm -rf /home/nrd/.config/forge
+    '';
+
+    # i have no clue what this does, i stole it from my gf
+    qt = {
+        enable = true;
+        platformTheme = "gnome";
+        style = "adwaita-dark";
+    };
+
+    # zsh
+    users.defaultUserShell = pkgs.zsh;
+    
     # Home manager
     # Here lies the stuff you may or may need here
     home-manager.users.nrd = { pkgs, ... }: {
@@ -18,6 +43,9 @@ with lib;
             "org/gnome/desktop/interface" = {
                 color-schene = "prefer-dark";
                 clock-show-seconds = false;
+                clock-format = "24h";
+                clock-show-date = true;
+                cursor-theme = "GoogleDot-Black";
             };
 
             # blur my shell
@@ -57,7 +85,7 @@ with lib;
                 con-tabbed-showtab-decoration-toggle = [];
                 focus-border-toggle = [];
                 prefs-open = [];
-                prefs-tiling-toggle = [ "<Shift><Control><Super>e" ];
+                prefs-tiling-toggle = [];
                 window-focus-down = [];
                 window-focus-left = [];
                 window-focus-right = [];
@@ -106,7 +134,7 @@ with lib;
                 auto-switch-to-most-recent = true;
                 button-placeholder = "";
                 divider-string = " - ";
-                extension-place = "center";
+                extension-place = "left";
                 first-field = "xesam:title";
                 icon-padding = 5;
                 label-filtered-list = "remaster,remix,featuring,live";

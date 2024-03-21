@@ -13,14 +13,10 @@ in
 
   # flatpak 
   services.flatpak.enable = true;
+  system.activationScripts.flathub.text = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
   
   # nix pkgs
   programs = {
-    steam = {
-        enable = true;
-        dedicatedServer.openFirewall = false; # sauce™ servers
-        remotePlay.openFirewall = true; # remote play
-    };
     nix-ld.enable = true;
     zsh.enable = true;
   };
@@ -31,35 +27,26 @@ in
     thefuck
     bun
     tuba
-    citra-nightly
     wget
-    telegram-desktop
     prismlauncher
-    natron
-    davinci-resolve
-    trigger-control
-    gnome.gnome-tweaks
-    libsForQt5.kdenlive
-    gnome.gnome-software
     nodejs
     home-manager
     firefox
     chromium
-    immersed-vr
     lollypop
     obsidian
-    inkscape
-    gnome.dconf-editor
-    blender
-    gnome.mutter
     killall
     android-tools
     vscode
-    yuzu-mainline
-    dolphin-emu
     zulu8
     libreoffice
     dconf2nix
+    telegram-desktop
+  ]) ++ (with pkgs.gnome; [
+    # gnome packages
+    gnome-tweaks
+    gnome-software
+    dconf-editor
   ]) ++ (with pkgs.gnomeExtensions; [
     # gnome extensions
     extension-list
