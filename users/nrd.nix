@@ -6,10 +6,6 @@ with lib;
         isNormalUser = true;
         description = "NRD";
         extraGroups = [ "networkmanager" "wheel" ];
-        packages = with pkgs; [
-            adw-gtk3
-            google-cursor
-        ];
     };
 
     # make forge STFU
@@ -189,7 +185,4 @@ with lib;
             };
         };
     };
-
-    # idk what to do
-    home-manager.useGlobalPkgs = true;
 }

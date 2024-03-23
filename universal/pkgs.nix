@@ -14,6 +14,9 @@ in
   # flatpak 
   services.flatpak.enable = true;
   system.activationScripts.flathub.text = "${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
+
+  # idk what to do
+  home-manager.useGlobalPkgs = true;
   
   # nix pkgs
   programs = {
@@ -27,32 +30,35 @@ in
     };
   };
   
-  # ææææææææ
+  # idk
   environment.systemPackages = (with pkgs; [
-    # apps
     thefuck
+    wget
+    home-manager
+    dconf2nix
+    android-tools
+    killall
+  ]) ++ (with pkgs.gnome; [
+    gnome-tweaks
+    gnome-software
+    dconf-editor
+  ]);
+
+  # nrd
+  users.users.nrd.packages = (with pkgs; [
+    # apps
     bun
     tuba
-    wget
-    prismlauncher
     nodejs
-    home-manager
-    chromium
     lollypop
     obsidian
-    killall
-    android-tools
     vscode
     zulu8
     libreoffice
-    dconf2nix
     telegram-desktop
     inkscape
   ]) ++ (with pkgs.gnome; [
     # gnome packages
-    gnome-tweaks
-    gnome-software
-    dconf-editor
   ]) ++ (with pkgs.gnomeExtensions; [
     # gnome extensions
     extension-list

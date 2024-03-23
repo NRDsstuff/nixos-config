@@ -6,12 +6,14 @@
     # universal
     ./universal/autoupdate.nix
     ./universal/locale.nix
-    ./universal/nrd.nix
     ./universal/pkgs.nix
     ./universal/syncthing.nix
     ./universal/services.nix
     ./universal/misc.nix
     ./universal/desktop.nix
+
+    # users
+    ./users/nrd.nix
 
     # replace desktop with device
     ./desktop/import.nix

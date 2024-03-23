@@ -9,5 +9,6 @@
     ./pkgs.nix
     ./synced-folders.nix
     ./virtualization.nix
+    ../users/gutek.nix
   ];
 }
