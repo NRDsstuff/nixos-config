@@ -6,10 +6,9 @@
         ./disks.nix
         ./misc.nix
         ./networking.nix
+        ./pkgs.nix
         # users
-        ../users/gui/nrd.nix
+        ../users/server/nrd.nix
         # other
-        ../universal/pkgs.nix
-        ../universal/desktop.nix
     ];
 }

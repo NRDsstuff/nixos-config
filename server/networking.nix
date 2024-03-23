@@ -9,7 +9,10 @@
     # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
 
     # ssh
-    services.openssh.enable = true;
+    services.openssh = {
+        enable = true;
+        DenyUsers = [ "shareduser" ];
+    };
     
     # hostname
     networking.hostName = "nrdeproseros";
@@ -20,11 +23,10 @@
     # firewall
     networking.firewall = {
         enable = true;
-        # for kde connect 
         allowedTCPPortRanges = [
             {
-                from = 1716;
-                to = 1764;
+                from = 20;
+                to = 22;
             }
             {
                 from = 25555;
@@ -33,8 +35,8 @@
         ];
         allowedUDPPortRanges = [
             {
-                from = 1716;
-                to = 1764;
+                from = 20;
+                to = 22;
             }
             {
                 from = 25555;
