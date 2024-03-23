@@ -17,5 +17,6 @@
 
     users.groups.admins = {
         name = "admins";
+        gid = 6969;
     };
 }
