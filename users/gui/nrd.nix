@@ -9,10 +9,17 @@ with lib;
     };
 
     # make forge STFU
-    services.xserver.displayManager.sessionCommands = ''
-        rm -rf /home/nrd/undefined.bak
-        rm -rf /home/nrd/.config/forge
-    '';
+    systemd.services.forgeFuckupFix = {
+        description = "Fix up forge's fuckup";
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig = {
+            ExecStart = ''
+                ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak || true
+                ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge || true
+            '';
+            RemainAfterExit = true;
+        };
+    };
 
     # i have no clue what this does, i stole it from my gf
     qt = {
