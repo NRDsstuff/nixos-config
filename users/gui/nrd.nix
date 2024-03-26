@@ -14,6 +14,8 @@ with lib;
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
             ExecStart = ''
+                ${pkgs.coreutils}/bin/touch /home/nrd/undefined.bak
+                ${pkgs.coreutils}/bin/touch /home/nrd/.config/forge
                 ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak || true
                 ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge || true
             '';

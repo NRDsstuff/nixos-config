@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 { 
-    # Set your time zone.
+    # yes, i am polish, yes, i hate the polish language
     time.timeZone = "Europe/Warsaw";
 
     # Select internationalisation properties.

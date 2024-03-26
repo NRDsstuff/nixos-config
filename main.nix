@@ -4,7 +4,7 @@
     # import shit lol
     imports = [
         # universal
-        ./universal/autoupdate.nix
+        ./universal/autoupdate.nix # yes, autoupdate for the server. what could possibly go wrong?
         ./universal/locale.nix
         ./universal/syncthing.nix
         ./universal/misc.nix
