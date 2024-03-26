@@ -10,6 +10,11 @@
                 extraLibraries = pkgs: with pkgs; [
                     glib-networking
                 ];
+                extraPkgs = pkgs: with pkgs; [
+                    bumblebee
+                    glxinfo
+                    openssl_1_1
+                ];
             };
         };
     };
@@ -30,6 +35,8 @@
         citra-nightly
         yuzu-mainline
         dolphin-emu
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
     ];
 
     # nrd's bro

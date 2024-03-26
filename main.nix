@@ -7,7 +7,6 @@
         ./universal/autoupdate.nix
         ./universal/locale.nix
         ./universal/syncthing.nix
-        ./universal/services.nix
         ./universal/misc.nix
 
         # replace desktop with device

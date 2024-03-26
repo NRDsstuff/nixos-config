@@ -8,8 +8,9 @@ in
     # meow
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
-    # Allow unfree packages
+    # pooprietary
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.nvidia.acceptLicense = true;
 
     # flatpak 
     services.flatpak.enable = true;
@@ -38,6 +39,7 @@ in
         dconf2nix
         android-tools
         killall
+        gparted
     ]) ++ (with pkgs.gnome; [
         gnome-tweaks
         gnome-software
@@ -79,6 +81,7 @@ in
     # SHUT THE FUCK UP
     nixpkgs.config.permittedInsecurePackages = [
         "electron-25.9.0" 
+        "openssl-1.1.1w"
     ];
     
     # fonts lol
