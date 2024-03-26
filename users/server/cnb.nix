@@ -51,8 +51,5 @@
                 '';
             };
         };
-
-        # More configurations can be found in config.nix
-        home.file = import ./config.nix;
     };
 }
