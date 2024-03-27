@@ -15,6 +15,16 @@ in
     # flatpak 
     services.flatpak.enable = true;
     system.activationScripts.flathub.text = "${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
+    system.activationScripts.flatpakApps.text = ''
+        ${pkgs.flatpak}/bin/flatpak install app.drey.Dialect
+        ${pkgs.flatpak}/bin/flatpak install com.github.tchx84.Flatseal
+        ${pkgs.flatpak}/bin/flatpak install app.drey.EarTag
+        ${pkgs.flatpak}/bin/flatpak install dev.vencord.Vesktop
+        ${pkgs.flatpak}/bin/flatpak install io.github.Figma_Linux.figma_linux
+        ${pkgs.flatpak}/bin/flatpak install io.github.Foldex.AdwSteamGtk
+        ${pkgs.flatpak}/bin/flatpak install org.gnome.gitlab.somas.Apostrophe
+        ${pkgs.flatpak}/bin/flatpak install org.nickvision.tubeconverter
+    '';
 
     # idk what to do
     home-manager.useGlobalPkgs = true;

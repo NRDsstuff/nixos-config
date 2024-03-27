@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}:
+{config, lib, pkgs, modulesPath, ...}:
 with lib;
 {
     # define user
@@ -44,6 +44,21 @@ with lib;
         # yes
         dconf.settings = {
 
+            # keybinds
+            "org/gnome/desktop/wm/keybindings" = {
+                activate-window-menu = [ "<Alt>F3" ];
+                begin-resize = [ "<Control><Super>c" ];
+                minimize = [ "<Super>Page_Down" ];
+                move-to-workspace-1 = [];
+                move-to-workspace-last = [];
+                move-to-workspace-left = [ "<Shift><Control><Super>Left" ];
+                move-to-workspace-right = [ "<Shift><Control><Super>Right" ];
+                switch-to-workspace-left = [ "<Control><Super>Left" ];
+                switch-to-workspace-right = [ "<Control><Super>Right" ];
+                toggle-fullscreen = [ "<Super>F11" ];
+                toggle-maximized = [ "<Super>w" ];
+            };
+
             # gnome settings
             "org/gnome/desktop/interface" = {
                 color-schene = "prefer-dark";
@@ -51,7 +66,15 @@ with lib;
                 clock-format = "24h";
                 clock-show-date = true;
                 cursor-theme = "GoogleDot-Black";
+                enable-hot-corners = false;
+                gtk-enable-primary-paste = false; # genuinely one of the most annoying features ever
+                gtk-theme = "adw-gtk3-dark";
+                icon-theme = "Adwaita hacks";
             };
+
+            "org/gnome/desktop/peripherals/mouse" = {
+                accel-profile = "flat"; # why is there mouse accel in the first place
+            }
 
             # blur my shell
             "org/gnome/shell/extensions/blur-my-shell" = {
