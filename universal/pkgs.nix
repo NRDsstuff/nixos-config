@@ -106,12 +106,13 @@ in
         ];
     };
 
-    # install custom icon packs and cursors
-    system.activationScripts.icons.text = ''
+    # install custom icon packs, cursors and wallpapers
+    system.activationScripts.themingResources.text = ''
         ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
         ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
         ${pkgs.coreutils}/bin/mkdir -p /usr/share
         ${pkgs.coreutils}/bin/mkdir -p /usr/share/icons
         ${pkgs.coreutils}/bin/cp -s ${resourceDir}/icons /usr/share/icons -r
+        ${pkgs.coreutils}/bin/cp -s ${resourceDir}/backgrounds /usr/share/backgrounds -r
     '';
 }
