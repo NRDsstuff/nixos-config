@@ -109,6 +109,7 @@ in
     # install custom icon packs, cursors and wallpapers
     system.activationScripts.themingResources.text = ''
         ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
+        ${pkgs.coreutils}/bin/rm -rf /usr/share/backgrounds
         ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
         ${pkgs.coreutils}/bin/mkdir -p /usr/share
         ${pkgs.coreutils}/bin/mkdir -p /usr/share/icons

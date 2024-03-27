@@ -64,6 +64,9 @@ with lib;
         # yes
         dconf.settings = {
 
+            "org/gnome/desktop/background" = {
+                picture-uri = "file:///usr/share/backgrounds/Nebula.png";
+            };
             # keybinds
             "org/gnome/desktop/wm/keybindings" = {
                 activate-window-menu = [ "<Alt>F3" ];
