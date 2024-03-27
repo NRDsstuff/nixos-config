@@ -216,7 +216,8 @@ with lib;
         programs = { 
             git = {
                 enable = true;
-                userName = "NRDsstuff";
+                userName = "nrdsstuff";
+                userEmail = "nrdfoss@gmail.com";
             };
 
             zsh = {

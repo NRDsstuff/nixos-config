@@ -3,12 +3,12 @@
 {
     # my hard drive config
     fileSystems."/" = { 
-        device = "/dev/disk/by-uuid/22b300b6-35b3-4318-a2a1-dfeeac785616";
+        device = "/dev/disk/by-uuid/755aa083-c14d-4416-b748-bfac9ffa811d";
         fsType = "btrfs";
     };
 
     fileSystems."/boot" = { 
-        device = "/dev/disk/by-uuid/A42D-9C42";
+        device = "/dev/disk/by-uuid/EA26-EBF0";
         fsType = "vfat";
     };
       
