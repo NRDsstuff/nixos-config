@@ -177,7 +177,7 @@ with lib;
             };
 
             # app hider
-            "org/gnome/shell/extensions/app-hider/hidden-apps" = {
+            "org/gnome/shell/extensions/app-hider" = {
                 hidden-apps = ["cups.desktop" "chromium-browser.desktop" "nixos-manual.desktop" "nvidia-settings.desktop" "yelp.desktop" "xterm.desktop" "simple-scan.desktop" "Steam Linux Runtime 3.0 (sniper).desktop" "Proton Experimental.desktop"];
             };
 
