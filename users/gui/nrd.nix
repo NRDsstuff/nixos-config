@@ -65,10 +65,11 @@ with lib;
                 clock-show-seconds = false;
                 clock-format = "24h";
                 clock-show-date = true;
-                cursor-theme = "GoogleDot-Black";
                 enable-hot-corners = false;
                 gtk-enable-primary-paste = false; # genuinely one of the most annoying features ever
+                # could break the setup if files not present, put icons from resources to /usr/share (i don't know how to do it automatically)
                 gtk-theme = "adw-gtk3-dark";
+                cursor-theme = "GoogleDot-Black";
                 icon-theme = "Adwaita hacks";
             };
 
