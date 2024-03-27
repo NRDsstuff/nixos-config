@@ -74,7 +74,7 @@ with lib;
 
             "org/gnome/desktop/peripherals/mouse" = {
                 accel-profile = "flat"; # why is there mouse accel in the first place
-            }
+            };
 
             # blur my shell
             "org/gnome/shell/extensions/blur-my-shell" = {
