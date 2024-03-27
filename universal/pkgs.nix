@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 let
     unstable = import <nixos-unstable> { config = { allowUnfree = true; };};
+    resourceDir = ./../resources;
 in
 {
     imports = [ <home-manager/nixos> ];
@@ -24,26 +25,6 @@ in
         ${pkgs.coreutils}/bin/yes | ${pkgs.flatpak}/bin/flatpak install io.github.Foldex.AdwSteamGtk
         ${pkgs.coreutils}/bin/yes | ${pkgs.flatpak}/bin/flatpak install org.gnome.gitlab.somas.Apostrophe
         ${pkgs.coreutils}/bin/yes | ${pkgs.flatpak}/bin/flatpak install org.nickvision.tubeconverter
-    '';
-
-    # set up ~
-    system.activationScripts.extra.text = ''
-        if [ -d "/extra" ]; then
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Videos && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Videos /home/nrd/Videos
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/3D && ${pkgs.coreutils}/bin/ln -s /extra/nrd/3D /home/nrd/3D
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Pictures && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Pictures /home/nrd/Pictures
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Templates && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Templates /home/nrd/Templates
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Music && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Music /home/nrd/Music
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Random && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Random /home/nrd/Random
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Coding && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Coding /home/nrd/Coding
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Nixos && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Nixos /home/nrd/Nixos
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Memes && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Memes /home/nrd/Memes
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Documents && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Documents /home/nrd/Documents
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Doom && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Doom /home/nrd/Doom
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Games && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Games /home/nrd/Games
-        else
-            echo "/extra does not exist."
-        fi
     '';
 
     # idk what to do
@@ -124,4 +105,13 @@ in
             fira-code-nerdfont
         ];
     };
+
+    # install custom icon packs and cursors
+    system.activationScripts.icons.text = ''
+        ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
+        ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
+        ${pkgs.coreutils}/bin/mkdir -p /usr/share
+        ${pkgs.coreutils}/bin/mkdir -p /usr/share/icons
+        ${pkgs.coreutils}/bin/cp -s ${resourceDir}/icons /usr/share/icons -r
+    '';
 }
