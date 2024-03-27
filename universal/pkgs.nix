@@ -25,6 +25,8 @@ in
         ${pkgs.coreutils}/bin/yes | ${pkgs.flatpak}/bin/flatpak install org.gnome.gitlab.somas.Apostrophe
         ${pkgs.coreutils}/bin/yes | ${pkgs.flatpak}/bin/flatpak install org.nickvision.tubeconverter
     '';
+
+    # set up ~
     system.activationScripts.extra.text = ''
         if [ -d "/extra" ]; then
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Videos && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Videos /home/nrd/Videos
