@@ -49,7 +49,7 @@ with lib;
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Doom && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Doom /home/nrd/Doom
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Games && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Games /home/nrd/Games
         else
-            echo "/extra does not exist."
+            echo "/extra does not exist"
         fi
     '';
     
