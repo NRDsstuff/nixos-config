@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>Nebula</name>
+    <filename>/usr/share/backgrounds/Nebula.png</filename>
+    <filename-dark>/usr/share/backgrounds/Nebula.png</filename-dark>
+    <options>zoom</options>
+  </wallpaper>
+</wallpapers>
+<!-- unused for now -->
