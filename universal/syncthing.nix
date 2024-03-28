@@ -4,8 +4,7 @@
     services.syncthing = {
         enable = true;
         user = "nrd";
-        dataDir = "/home/nrd/SyncthingDefault";    # Default folder for new synced folders
-        configDir = "/home/nrd/SyncthingDefault/.config/syncthing";   # Folder for Syncthing's settings and keys
+        configDir = "/home/nrd/.config/syncthing";   # Folder for Syncthing's settings and keys
     };
     
     services.syncthing.settings.devices = {
