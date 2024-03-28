@@ -110,7 +110,7 @@ in
                 # could break the setup if files not present, put icons from resources to /usr/share (i don't know how to do it automatically)
                 gtk-theme = "adw-gtk3-dark";
                 cursor-theme = "GoogleDot-Black";
-                icon-theme = "Adwaita hacks";
+                icon-theme = "Adwaita-hacks";
             };
 
             "org/gnome/desktop/peripherals/mouse" = {
