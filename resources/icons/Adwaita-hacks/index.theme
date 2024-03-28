@@ -1,8 +1,8 @@
 [Icon Theme]
-Name=Adwaita hacks
+Name=Adwaita-hacks
 Comment=The Only One
 Example=folder
-Inherits=hicolor
+Inherits=Adwaita
 
 # KDE Specific Stuff
 DisplayDepth=32

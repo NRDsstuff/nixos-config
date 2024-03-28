@@ -110,10 +110,12 @@ in
     system.activationScripts.themingResources.text = ''
         ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
         ${pkgs.coreutils}/bin/rm -rf /usr/share/backgrounds
+        ${pkgs.coreutils}/bin/rm -rf /usr/share/themes
         ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
         ${pkgs.coreutils}/bin/mkdir -p /usr/share
-        ${pkgs.coreutils}/bin/mkdir -p /usr/share/icons
-        ${pkgs.coreutils}/bin/cp -s ${resourceDir}/icons /usr/share/ -r
-        ${pkgs.coreutils}/bin/cp -s ${resourceDir}/backgrounds /usr/share/backgrounds -r
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/icons /usr/share/icons -r
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/backgrounds /usr/share/backgrounds -r
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/themes /usr/share/themes -r
+        ${pkgs.coreutils}/bin/chmod 777 -R /usr/share # ugh
     '';
 }

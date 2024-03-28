@@ -1,5 +1,8 @@
 {config, lib, pkgs, modulesPath, ...}:
 with lib;
+let
+    resourceDir = ../../resources;
+in
 {
     # define user
     users.users.nrd = {
@@ -51,6 +54,20 @@ with lib;
         else
             echo "/extra does not exist"
         fi
+    '';
+
+    # install custom icon packs, cursors and wallpapers
+    system.activationScripts.themingResourcesNRD.text = ''
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.icons
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.themes
+        ${pkgs.coreutils}/bin/mkdir /home/nrd/.icons
+        ${pkgs.coreutils}/bin/mkdir /home/nrd/.themes
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/icons/* /home/nrd/.icons -r
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/themes/* /home/nrd/.themes -r
+        ${pkgs.coreutils}/bin/chown -R nrd /home/nrd/.icons # ugh
+        ${pkgs.coreutils}/bin/chown -R nrd /home/nrd/.themes # ugh
+        ${pkgs.coreutils}/bin/chmod -R 777 /home/nrd/.icons # ugh
+        ${pkgs.coreutils}/bin/chmod -R 777 /home/nrd/.themes # ugh
     '';
     
     # Home manager
