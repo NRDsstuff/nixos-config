@@ -6,7 +6,7 @@ with lib;
         isNormalUser = true;
         description = "Meowster";
         extraGroups = [ "networkmanager" "wheel" "admins" ];
-        # shell = pkgs.bash;
+        shell = pkgs.bash;
         initialPassword = "setmelater";
     };
     
