@@ -6,13 +6,13 @@ with lib;
         isNormalUser = true;
         description = "Lenni";
         extraGroups = [ "networkmanager" "wheel" "admins" ];
-        shell = pkgs.bash;
+        # shell = pkgs.bash;
         initialPassword = "setmelater";
     };
     
     # Home manager
     # Here lies the stuff you may or may need here
-    home-manager.users.bash = { pkgs, ... }: {
+    home-manager.users.lenni = { pkgs, ... }: {
 
         systemd.user.sessionVariables = config.home-manager.users.lenni.home.sessionVariables;
         # never touch this

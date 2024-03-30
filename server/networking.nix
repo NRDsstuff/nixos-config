@@ -11,7 +11,7 @@
     # ssh
     services.openssh = {
         enable = true;
-        DenyUsers = [ "shareduser" ];
+        settings.DenyUsers = [ "shareduser" ];
     };
     
     # hostname

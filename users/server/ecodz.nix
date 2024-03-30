@@ -12,7 +12,7 @@ with lib;
     
     # Home manager
     # Here lies the stuff you may or may need here
-    home-manager.users.bash = { pkgs, ... }: {
+    home-manager.users.ecodz = { pkgs, ... }: {
 
         systemd.user.sessionVariables = config.home-manager.users.ecodz.home.sessionVariables;
         # never touch this
