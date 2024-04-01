@@ -39,11 +39,13 @@ in
             preferences = {
                 "widget.use-xdg-desktop-portal.file-picker" = 1;
             };
+            nativeMessagingHosts.packages = [ unstable.firefoxpwa ];
         };
     };
     
     # idk
     environment.systemPackages = (with pkgs; [
+        unstable.firefoxpwa
         thefuck
         wget
         home-manager
