@@ -14,6 +14,7 @@
         ../users/server/jeyphr.nix
         ../users/server/ecodz.nix
         ../users/server/lenni.nix
+        ../users/server/shareduser.nix
         # other
     ];
 }

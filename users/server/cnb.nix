@@ -11,10 +11,6 @@
         extraGroups = ["networkmanager" "wheel" "admins"];
         shell = pkgs.zsh;
         initialPassword = "setmelater";
-        packages = with pkgs; [
-
-            fastfetch
-        ];
     };
 
     home-manager.users.cat = { pkgs, ... }: {
