@@ -62,6 +62,7 @@ in
     # nrd
     users.users.nrd.packages = (with pkgs; [
         # apps
+        unzip
         bun
         tuba
         nodejs
@@ -76,6 +77,7 @@ in
         # gnome packages
     ]) ++ (with pkgs.gnomeExtensions; [
         # gnome extensions
+        just-perfection
         extension-list
         alphabetical-app-grid
         forge
