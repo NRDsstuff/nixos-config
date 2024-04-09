@@ -6,4 +6,4 @@ curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
 sudo flatpak override --env=GTK_THEME=adw-gtk3-dark 
-sudo flatpak override --env=ICON_THEME=Adwaita-hacks 
+sudo flatpak override --env=ICON_THEME=Adwaita-hacks
