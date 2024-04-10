@@ -17,14 +17,17 @@ in
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
             ExecStart = ''
-                ${pkgs.coreutils}/bin/touch /home/nrd/undefined.bak
-                ${pkgs.coreutils}/bin/touch /home/nrd/.config/forge
-                ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak || true
-                ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge || true
+                ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak
+                ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge
             '';
             RemainAfterExit = true;
         };
     };
+
+    system.activationScripts.idfk.text = ''
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge
+    '';
 
     # i have no clue what this does, i stole it from my gf
     qt = {

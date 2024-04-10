@@ -25,6 +25,7 @@ in
         ${pkgs.flatpak}/bin/flatpak install io.github.Foldex.AdwSteamGtk
         ${pkgs.flatpak}/bin/flatpak install org.gnome.gitlab.somas.Apostrophe
         ${pkgs.flatpak}/bin/flatpak install org.nickvision.tubeconverter
+        ${pkgs.flatpak}/bin/flatpak install org.telegram.desktop
     '';
 
     # idk what to do
@@ -71,7 +72,6 @@ in
         vscode
         zulu8
         libreoffice
-        telegram-desktop
         inkscape
     ]) ++ (with pkgs.gnome; [
         # gnome packages
