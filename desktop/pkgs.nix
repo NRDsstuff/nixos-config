@@ -19,11 +19,21 @@
         };
     };
 
+    system.activationScripts.cuda.text = ''
+        export CUDA_PATH=${pkgs.cudatoolkit}
+        # export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
+        export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
+        export EXTRA_CCFLAGS="-I/usr/include"
+    '';
+
+    # system stuff
+    environment.systemPackages = with pkgs; [
+        cudatoolkit
+    ];
+
     # nrd
     users.users.nrd.packages = with pkgs; [
         # apps
-        assaultcube
-        superTuxKart
         trigger-control
         immersed-vr
         blender

@@ -46,6 +46,7 @@ in
     
     # idk
     environment.systemPackages = (with pkgs; [
+        amberol
         unstable.firefoxpwa
         thefuck
         wget
