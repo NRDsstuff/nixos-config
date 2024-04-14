@@ -54,6 +54,7 @@ in
         android-tools
         killall
         gparted
+        appimage-run
     ]) ++ (with pkgs.gnome; [
         gnome-tweaks
         gnome-software

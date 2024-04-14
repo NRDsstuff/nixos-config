@@ -22,6 +22,7 @@
     # nrd
     users.users.nrd.packages = with pkgs; [
         # apps
+        assaultcube
         superTuxKart
         trigger-control
         immersed-vr

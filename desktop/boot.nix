@@ -11,7 +11,7 @@
     # bootloader  
     boot.loader = {
         systemd-boot = {
-            enable = true;
+            enable = false;
             memtest86.enable = true;
             consoleMode = "max";
         };
@@ -19,6 +19,11 @@
             canTouchEfiVariables = true;
             efiSysMountPoint = "/boot"; 
         };
-        grub.enable = false;
+        grub = {
+            devices = ["nodev"];  # Despite what the manpage indicates, setting device to "nodev" will still call grub-install if efiSupport is true
+            efiSupport = true;
+            enable = true;
+            gfxmodeEfi = "1920x1080";
+        };
     };
 }
