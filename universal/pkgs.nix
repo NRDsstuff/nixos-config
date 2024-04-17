@@ -26,6 +26,7 @@ in
         ${pkgs.flatpak}/bin/flatpak install org.gnome.gitlab.somas.Apostrophe
         ${pkgs.flatpak}/bin/flatpak install org.nickvision.tubeconverter
         ${pkgs.flatpak}/bin/flatpak install org.telegram.desktop
+        ${pkgs.flatpak}/bin/flatpak install io.bassi.Amberol
     '';
 
     # idk what to do
@@ -46,7 +47,7 @@ in
     
     # idk
     environment.systemPackages = (with pkgs; [
-        amberol
+        megatools
         unstable.firefoxpwa
         thefuck
         wget
