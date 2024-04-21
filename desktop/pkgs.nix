@@ -38,7 +38,6 @@
         immersed-vr
         blender
         libsForQt5.kdenlive
-        davinci-resolve
         natron
         adw-gtk3
         google-cursor

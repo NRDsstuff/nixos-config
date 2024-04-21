@@ -47,6 +47,7 @@ in
     
     # idk
     environment.systemPackages = (with pkgs; [
+        ffmpeg
         megatools
         unstable.firefoxpwa
         thefuck

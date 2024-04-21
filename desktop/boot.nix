@@ -2,11 +2,14 @@
 
 { 
     # kernel modules
-    boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    boot.supportedFilesystems = [ "ntfs" ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
+    boot = {
+        initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+        supportedFilesystems = [ "ntfs" ];
+        initrd.kernelModules = [ ];
+        kernelModules = [ "kvm-intel" ];
+        extraModulePackages = [ ];
+        kernelPackages = pkgs.linuxPackages_latest; 
+    };
     
     # bootloader  
     boot.loader = {

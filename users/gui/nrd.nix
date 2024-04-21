@@ -29,6 +29,11 @@ in
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge
     '';
 
+    system.activationScripts.p10kfile.text = ''
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.p10k.zsh
+        ${pkgs.coreutils}/bin/cp "${resourceDir}/config files/.p10k.zsh" /home/nrd
+    '';
+    
     # i have no clue what this does, i stole it from my gf
     qt = {
         enable = true;
@@ -251,8 +256,24 @@ in
                 oh-my-zsh = {
                     enable = true;
                     plugins = [ "git" "thefuck" ];
-                    theme = "darkblood";
+                    # theme = "darkblood";
                 };
+
+                shellAliases = {
+                    nixos-update = "sudo nixos-rebuild switch";
+                    nixos-test = "sudo nixos-rebuild test";
+                };
+
+                # powerlevel10k setup
+                # After updating your nixos with this setup, you will have p10k configuration upon new shell session
+                # Of course I included ~/.p10k.zsh when the file exists
+                plugins = [
+                    {
+                        name = "powerlevel10k";
+                        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
+                        file = "powerlevel10k.zsh-theme";
+                    }
+                ];
 
                 # The default zsh for NixOS doesn't have this kind of functionality
                 # So I had to add arrow-up and arrow-down for this
@@ -260,6 +281,8 @@ in
                 initExtra = ''
                 bindkey "''${key[Up]}" up-line-or-search
                 bindkey "''${key[Down]}" down-line-or-search
+
+                test -e ~/.p10k.zsh && source ~/.p10k.zsh
                 '';
             };
         };
