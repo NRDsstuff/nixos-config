@@ -10,7 +10,7 @@
         ./universal/misc.nix
 
         # replace desktop with device
-        ./surface/import.nix
+        ./desktop/import.nix
     ];
     
     # This value determines the NixOS release from which the default
