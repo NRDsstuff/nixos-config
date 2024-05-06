@@ -68,7 +68,7 @@ in
     users.users.nrd.packages = (with pkgs; [
         # apps
         unzip
-        bun
+        unstable.bun
         tuba
         nodejs
         lollypop
