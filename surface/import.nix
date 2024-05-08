@@ -6,6 +6,7 @@
         ./disks.nix
         ./misc.nix
         ./networking.nix
+        ./synced-folders.nix
         # users
         ../users/gui/nrd.nix
         # other
