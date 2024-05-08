@@ -128,6 +128,19 @@ in
                 accel-profile = "flat"; # why is there mouse accel in the first place
             };
 
+            # caffeine
+            "org/gnome/shell/extensions/caffeine" = {
+                duration-timer = 2;
+                enable-fullscreen = false;
+                indicator-position-max = 1;
+                prefs-default-height = 1032;
+                prefs-default-width = 1904;
+                restore-state = true;
+                show-indicator = "never";
+                toggle-state = true;
+                user-enabled = true;
+            };
+
             # blur my shell
             "org/gnome/shell/extensions/blur-my-shell" = {
 	            sigma = 80; # я сигма
