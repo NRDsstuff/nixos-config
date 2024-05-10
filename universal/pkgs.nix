@@ -79,6 +79,7 @@ in
         inkscape
     ]) ++ (with pkgs.gnome; [
         # gnome packages
+        quadrapassel
     ]) ++ (with pkgs.gnomeExtensions; [
         # gnome extensions
         just-perfection

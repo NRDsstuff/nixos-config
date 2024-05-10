@@ -62,6 +62,7 @@ in
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Games && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Games /home/nrd/Games
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Fonts && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Fonts /home/nrd/Fonts
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/Android && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Android /home/nrd/Android
+            ${pkgs.coreutils}/bin/rm -rf /home/nrd/Minecraft && ${pkgs.coreutils}/bin/ln -s /extra/nrd/Minecraft /home/nrd/Minecraft
         else
             echo "/extra does not exist"
         fi
