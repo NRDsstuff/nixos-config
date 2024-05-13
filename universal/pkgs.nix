@@ -15,7 +15,10 @@ in
 
     # flatpak 
     services.flatpak.enable = true;
-    system.activationScripts.flathub.text = "${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
+    system.activationScripts.flatrepos.text = ''
+        ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists appcenter https://flatpak.elementary.io/repo.flatpakrepo
+    '';
     system.activationScripts.flatpakApps.text = ''
         ${pkgs.flatpak}/bin/flatpak install app.drey.Dialect
         ${pkgs.flatpak}/bin/flatpak install com.github.tchx84.Flatseal
