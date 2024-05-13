@@ -68,7 +68,6 @@ in
     users.users.nrd.packages = (with pkgs; [
         # apps
         unzip
-        unstable.bun
         tuba
         nodejs
         lollypop
@@ -96,6 +95,10 @@ in
         tray-icons-reloaded
         undecorate
         window-is-ready-remover
+    ]) ++ (with unstable; [
+        # unstable channel
+        bun
+        gnomeExtensions.gemini-ai
     ]);
     
     # SHUT THE FUCK UP

@@ -1,30 +1,7 @@
-{ config, pkgs, modulesPath, ... }: 
-
+{config, ...}:
 {
-    # xorg config
-    services.xserver = {
-        enable = true;
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
-    };
+    imports = [
 
-    # remove bloatware that comes with the DE
-    services.xserver.excludePackages = with pkgs; [
-        xterm
+        ./desktops/gnome.nix
     ];
-    
-    environment.gnome.excludePackages = (with pkgs; [
-        gnome-photos
-        gnome-tour
-        snapshot
-    ]) ++ (with pkgs.gnome; [
-        cheese # webcam tool
-        gnome-music
-        gedit # text editor
-        epiphany # web browser
-        tali # poker game
-        iagno # go game
-        hitori # sudoku game
-        atomix # puzzle game
-    ]);
 }
