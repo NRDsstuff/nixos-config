@@ -31,6 +31,12 @@ in
         ${pkgs.flatpak}/bin/flatpak install org.telegram.desktop
         ${pkgs.flatpak}/bin/flatpak install io.bassi.Amberol
     '';
+    system.activationScripts.flatpakThemes.text = ''
+        ${pkgs.flatpak}/bin/flatpak override --filesystem=$HOME/.themes
+        ${pkgs.flatpak}/bin/flatpak override --filesystem=$HOME/.icons
+        ${pkgs.flatpak}/bin/flatpak override --env=GTK_THEME=adw-gtk3-dark 
+        ${pkgs.flatpak}/bin/flatpak override --env=ICON_THEME=Adwaita-hacks
+    '';
 
     # idk what to do
     home-manager.useGlobalPkgs = true;
