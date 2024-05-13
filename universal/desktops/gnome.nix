@@ -34,8 +34,4 @@
         platformTheme = "gnome";
         style = "adwaita-dark";
     };
-    
-    environment.sessionVariables = {
-        NIX_PROFILES = "${pkgs.lib.concatStringsSep " " (pkgs.lib.reverseList config.environment.profiles)}";
-    };
 }

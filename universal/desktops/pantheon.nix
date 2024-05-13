@@ -4,8 +4,11 @@
     # xorg config
     services.xserver = {
         enable = true;
-        displayManager.sddm.enable = true;
-        desktopManager.plasma6.enable = true;
+        displayManager = {
+            lightdm.enable = true;
+            pantheon.enable = true;
+            lightdm.greeters.pantheon.enable = false;
+        };
     };
 
     # remove bloatware that comes with the DE
