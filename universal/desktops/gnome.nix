@@ -50,4 +50,27 @@
         ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
     '';
+
+    environment.systemPackages = (with pkgs.gnome; [
+        gnome-tweaks
+        gnome-software
+        dconf-editor
+        quadrapassel
+    ]) ++ (with pkgs.gnomeExtensions; [
+        # gnome extensions
+        just-perfection
+        extension-list
+        alphabetical-app-grid
+        forge
+        app-hider
+        blur-my-shell
+        caffeine
+        unmess
+        pano
+        gsconnect
+        mpris-label
+        tray-icons-reloaded
+        undecorate
+        window-is-ready-remover
+    ]);
 }

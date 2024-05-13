@@ -43,7 +43,7 @@ in
     };
     
     # idk
-    environment.systemPackages = (with pkgs; [
+    environment.systemPackages = with pkgs; [
         ffmpeg
         megatools
         unstable.firefoxpwa
@@ -55,11 +55,7 @@ in
         killall
         gparted
         appimage-run
-    ]) ++ (with pkgs.gnome; [
-        gnome-tweaks
-        gnome-software
-        dconf-editor
-    ]);
+    ])
 
     # nrd
     users.users.nrd.packages = (with pkgs; [
@@ -73,29 +69,9 @@ in
         zulu8
         libreoffice
         inkscape
-    ]) ++ (with pkgs.gnome; [
-        # gnome packages
-        quadrapassel
-    ]) ++ (with pkgs.gnomeExtensions; [
-        # gnome extensions
-        just-perfection
-        extension-list
-        alphabetical-app-grid
-        forge
-        app-hider
-        blur-my-shell
-        caffeine
-        unmess
-        pano
-        gsconnect
-        mpris-label
-        tray-icons-reloaded
-        undecorate
-        window-is-ready-remover
     ]) ++ (with unstable; [
         # unstable channel
         bun
-        gnomeExtensions.gemini-ai
     ]);
     
     # SHUT THE FUCK UP
