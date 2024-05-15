@@ -55,8 +55,8 @@ in
         killall
         gparted
         appimage-run
-    ])
-
+    ];
+    
     # nrd
     users.users.nrd.packages = (with pkgs; [
         # apps
