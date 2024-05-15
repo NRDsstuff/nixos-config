@@ -1,12 +1,16 @@
-{ config, pkgs, modulesPath, ... }: 
-
+{ config, pkgs, ... }: 
+let
+    unstable = import <nixos-unstable> {
+        config = { allowUnfree = true; };
+        services.x11.displayManager.sddm.kde = true;
+        services.desktopManager.plasma = pkgs.plasma6;
+    };
+in
 {
     # xorg config
-    services.xserver = {
-        enable = true;
-        displayManager.sddm.enable = true;
-        desktopManager.plasma6.enable = true;
-    };
+    services.xserver.enable = true;
+
+    config.services.environment.systemPackages.override = pkgsUnstable;
 
     # remove bloatware that comes with the DE
     services.xserver.excludePackages = with pkgs; [
@@ -14,7 +18,7 @@
     ];
     
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
-        oxygen
+        
     ];
 
     environment.sessionVariables = {
