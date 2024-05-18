@@ -26,6 +26,6 @@ in
     qt = {
         enable = true;
         platformTheme = "kde";
-        style = "breeze-dark";
+        style = "breeze";
     };
 }
