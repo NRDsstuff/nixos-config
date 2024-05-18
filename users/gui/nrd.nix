@@ -33,13 +33,6 @@ in
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/.p10k.zsh
         ${pkgs.coreutils}/bin/cp "${resourceDir}/config files/.p10k.zsh" /home/nrd
     '';
-    
-    # i have no clue what this does, i stole it from my gf
-    qt = {
-        enable = true;
-        platformTheme = "gnome";
-        style = "adwaita-dark";
-    };
 
     # zsh
     users.defaultUserShell = pkgs.zsh;

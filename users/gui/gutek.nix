@@ -13,13 +13,6 @@ with lib;
         rm -rf /home/nrd/undefined.bak
         rm -rf /home/nrd/.config/forge
     '';
-    
-    # i have no clue what this does, i stole it from my gf
-    qt = {
-        enable = true;
-        platformTheme = "gnome";
-        style = "adwaita-dark";
-    };
 
     # zsh
     users.defaultUserShell = pkgs.zsh;
