@@ -2,6 +2,6 @@
 {
     imports = [
 
-        ./desktops/kde.nix
+        ./desktops/gnome.nix
     ];
 }
