@@ -1,0 +1,13 @@
+9
+
+https://sync-tube.de/
+https://sync-tube.de/sw.js
+true
+{0b9068b5-37f2-4deb-8dd0-38437db21fdb}
+0
+1716059723081514
+1716059723082381
+1716059721880340
+0
+true
+#
