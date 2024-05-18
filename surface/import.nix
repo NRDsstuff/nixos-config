@@ -13,5 +13,6 @@
         ../universal/pkgs.nix
         ../universal/desktop.nix
         ../universal/services.nix
+        ../universal/virtualization.nix
     ];
 }
