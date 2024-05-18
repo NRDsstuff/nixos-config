@@ -37,16 +37,13 @@
     };
 
     # flatpak
-    system.activationScripts.flatpakApps.text = ''
+    system.activationScripts.gnomeFlatpakApps.text = ''
         ${pkgs.flatpak}/bin/flatpak install flathub app.drey.Dialect
         ${pkgs.flatpak}/bin/flatpak install flathub com.github.tchx84.Flatseal
         ${pkgs.flatpak}/bin/flatpak install flathub app.drey.EarTag
-        ${pkgs.flatpak}/bin/flatpak install flathub dev.vencord.Vesktop
-        ${pkgs.flatpak}/bin/flatpak install flathub io.github.Figma_Linux.figma_linux
         ${pkgs.flatpak}/bin/flatpak install flathub io.github.Foldex.AdwSteamGtk
         ${pkgs.flatpak}/bin/flatpak install flathub org.gnome.gitlab.somas.Apostrophe
         ${pkgs.flatpak}/bin/flatpak install flathub org.nickvision.tubeconverter
-        ${pkgs.flatpak}/bin/flatpak install flathub org.telegram.desktop
         ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
     '';

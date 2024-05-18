@@ -25,6 +25,11 @@ in
         ${pkgs.flatpak}/bin/flatpak override --env=GTK_THEME=adw-gtk3-dark 
         ${pkgs.flatpak}/bin/flatpak override --env=ICON_THEME=Adwaita-hacks
     '';
+    system.activationScripts.universalFlatpakApps.text = ''
+        ${pkgs.flatpak}/bin/flatpak install flathub dev.vencord.Vesktop
+        ${pkgs.flatpak}/bin/flatpak install flathub io.github.Figma_Linux.figma_linux
+        ${pkgs.flatpak}/bin/flatpak install flathub org.telegram.desktop
+    '';
 
     # idk what to do
     home-manager.useGlobalPkgs = true;
