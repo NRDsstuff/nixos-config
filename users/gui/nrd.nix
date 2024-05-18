@@ -62,7 +62,7 @@ in
     '';
     system.activationScripts.firefoxProfile.text = ''
         if [ -d "/extra" ]; then
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/mozilla /home/nrd/mozilla
+            ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
         else
             if [ -d "/home/nrd/.mozilla" ]; then
                 echo "mozilla folder already exists. remove it manually if you want to replace it."
