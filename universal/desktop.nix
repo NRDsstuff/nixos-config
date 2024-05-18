@@ -2,6 +2,6 @@
 {
     imports = [
 
-        ./desktops/gnome.nix
+        ./desktops/pantheon.nix
     ];
 }

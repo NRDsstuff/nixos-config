@@ -55,6 +55,7 @@ in
         killall
         gparted
         appimage-run
+        distrobox
     ];
     
     # nrd
