@@ -4,9 +4,9 @@
     # xorg config
     services.xserver = {
         enable = true;
+        desktopManager.pantheon.enable = true;
         displayManager = {
             lightdm.enable = true;
-            pantheon.enable = true;
             lightdm.greeters.pantheon.enable = false;
         };
     };
