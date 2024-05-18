@@ -69,6 +69,7 @@ in
             else
                 ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
                 ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/*" "/home/nrd/.mozilla/"
+            fi
         fi
     '';
 
