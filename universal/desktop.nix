@@ -2,6 +2,6 @@
 {
     imports = [
 
-        ./desktops/pantheon.nix
+        ./desktops/kde.nix
     ];
 }

@@ -21,4 +21,11 @@ in
     environment.sessionVariables = {
         NIX_PROFILES = "${pkgs.lib.concatStringsSep " " (pkgs.lib.reverseList config.environment.profiles)}";
     };
+
+    # qt theme 
+    qt = {
+        enable = true;
+        platformTheme = "kde";
+        style = "breeze-dark";
+    };
 }
