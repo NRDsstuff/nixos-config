@@ -2,8 +2,16 @@
 with lib;
 let
     resourceDir = ../../resources;
+    homeConfig = ".config/";
+    fastfetch = import ./config/fastfetch.nix;
 in
 {
+    imports = [
+        ./nrd/dconf.nix
+    ];
+
+    "${homeConfig}fastfetch/config.jsonc".text = builtins.toJSON fastfetch;
+
     # define user
     users.users.nrd = {
         isNormalUser = true;
@@ -24,6 +32,8 @@ in
         };
     };
 
+    # forge brain damage fix
+    # i have no idea why it breaks like this 
     system.activationScripts.idfk.text = ''
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/undefined.bak
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/.config/forge
@@ -60,6 +70,8 @@ in
             echo "/extra does not exist"
         fi
     '';
+
+    # furryfox
     system.activationScripts.firefoxProfile.text = ''
         if [ -d "/extra" ]; then
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
@@ -72,6 +84,10 @@ in
             fi
         fi
     '';
+    "firefox-gnome-theme" = {
+        target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
+        source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
+    };
 
     # install custom icon packs, cursors and wallpapers
     system.activationScripts.themingResourcesNRD.text = ''
@@ -94,173 +110,32 @@ in
         systemd.user.sessionVariables = config.home-manager.users.nrd.home.sessionVariables;
         # never touch this
         home.stateVersion = "23.11";
-        
-        # yes
-        dconf.settings = {
-
-            "org/gnome/desktop/background" = {
-                picture-uri = "file:///usr/share/backgrounds/Nebula.png";
-            };
-            # keybinds
-            "org/gnome/desktop/wm/keybindings" = {
-                activate-window-menu = [ "<Alt>F3" ];
-                begin-resize = [ "<Control><Super>c" ];
-                minimize = [ "<Super>Page_Down" ];
-                move-to-workspace-1 = [];
-                move-to-workspace-last = [];
-                move-to-workspace-left = [ "<Shift><Control><Super>Left" ];
-                move-to-workspace-right = [ "<Shift><Control><Super>Right" ];
-                switch-to-workspace-left = [ "<Control><Super>Left" ];
-                switch-to-workspace-right = [ "<Control><Super>Right" ];
-                toggle-fullscreen = [ "<Super>F11" ];
-                toggle-maximized = [ "<Super>w" ];
-            };
-
-            # gnome settings
-            "org/gnome/desktop/interface" = {
-                color-schene = "prefer-dark";
-                clock-show-seconds = false;
-                clock-format = "24h";
-                clock-show-date = true;
-                enable-hot-corners = false;
-                gtk-enable-primary-paste = false; # genuinely one of the most annoying features ever
-                # could break the setup if files not present, put icons from resources to /usr/share (i don't know how to do it automatically)
-                gtk-theme = "adw-gtk3-dark";
-                cursor-theme = "GoogleDot-Black";
-                icon-theme = "Adwaita-hacks";
-            };
-
-            "org/gnome/desktop/peripherals/mouse" = {
-                accel-profile = "flat"; # why is there mouse accel in the first place
-            };
-
-            # caffeine
-            "org/gnome/shell/extensions/caffeine" = {
-                duration-timer = 2;
-                enable-fullscreen = false;
-                indicator-position-max = 1;
-                prefs-default-height = 1032;
-                prefs-default-width = 1904;
-                restore-state = true;
-                show-indicator = "never";
-                toggle-state = true;
-                user-enabled = true;
-            };
-
-            # blur my shell
-            "org/gnome/shell/extensions/blur-my-shell" = {
-	            sigma = 80; # я сигма
-            };
-
-            "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
-                style-dialogs = 2;
-            };
-
-            "org/gnome/shell/extensions/blur-my-shell/applications" = {
-                blur = true;
-            };
-
-            "org/gnome/shell/extensions/blur-my-shell/panel" = {
-                blur = true;
-            };
-
-            # tiling yay
-            "org/gnome/shell/extensions/forge" = {
-                css-last-update = 37;
-                focus-border-toggle = false;
-                preview-hint-enabled = false;
-                quick-settings-enabled = false;
-                stacked-tiling-mode-enabled = false;
-                tabbed-tiling-mode-enabled = false;
-                tiling-mode-enabled = true;
-            };
-
-            "org/gnome/shell/extensions/forge/keybindings" = {
-                con-split-horizontal = [];
-                con-split-layout-toggle = [];
-                con-split-vertical = [];
-                con-stacked-layout-toggle = [];
-                con-tabbed-layout-toggle = [];
-                con-tabbed-showtab-decoration-toggle = [];
-                focus-border-toggle = [];
-                prefs-open = [];
-                prefs-tiling-toggle = [];
-                window-focus-down = [];
-                window-focus-left = [];
-                window-focus-right = [];
-                window-focus-up = [];
-                window-gap-size-decrease = [];
-                window-gap-size-increase = [];
-                window-move-down = [];
-                window-move-left = [];
-                window-move-right = [];
-                window-move-up = [];
-                window-resize-bottom-decrease = [];
-                window-resize-bottom-increase = [];
-                window-resize-left-decrease = [];
-                window-resize-left-increase = [];
-                window-resize-right-decrease = [];
-                window-resize-right-increase = [];
-                window-resize-top-decrease = [];
-                window-resize-top-increase = [];
-                window-snap-center = [];
-                window-snap-one-third-left = [];
-                window-snap-one-third-right = [];
-                window-snap-two-third-left = [];
-                window-snap-two-third-right = [];
-                window-swap-down = [];
-                window-swap-last-active = [];
-                window-swap-left = [];
-                window-swap-right = [];
-                window-swap-up = [];
-                window-toggle-always-float = [];
-                window-toggle-float = [ "<Super>f" ];
-                workspace-active-tile-toggle = [];
-            };
-
-            # alphabetical app grid
-            "org/gnome/shell/extensions/alphabetical-app-grid" = {
-                folder-order-position = "end";
-            };
-
-            # app hider
-            "org/gnome/shell/extensions/app-hider" = {
-                hidden-apps = ["cups.desktop" "chromium-browser.desktop" "nixos-manual.desktop" "nvidia-settings.desktop" "yelp.desktop" "xterm.desktop" "simple-scan.desktop" "Steam Linux Runtime 3.0 (sniper).desktop" "Proton Experimental.desktop"];
-            };
-
-            # mpris
-            "org/gnome/shell/extensions/mpris-label" = {
-                auto-switch-to-most-recent = true;
-                button-placeholder = "";
-                divider-string = " - ";
-                extension-place = "left";
-                first-field = "xesam:title";
-                icon-padding = 5;
-                label-filtered-list = "remaster,remix,featuring,live";
-                last-field = "xesam:artist";
-                left-padding = 5;
-                right-padding = 4;
-                second-field = "";
-            };
-
-            # pano
-            "org/gnome/shell/extensions/pano" = {
-                global-shortcut = [ "<Control><Super>v" ];
-                history-length = 100;
-                icon-pack = 0;
-                paste-on-select = false;
-                show-indicator = false;
-                wiggle-indicator = true;
-                # window-position = 1; # doesn't do shit (but it's supposed to)
-            };
-
-            # tray icons
-            "org/gnome/shell/extensions/trayIconsReloaded" = {
-                icons-limit = 1;
-            };
-        };
 
         programs = { 
+
+             firefox = {
+                enable = true;
+                profiles.homeconfig = {
+                    search.privateDefault = "DuckDuckGo";
+                    name = "Default managed by home-manager";
+                    settings = {
+                        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+
+                        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+                        "browser.tabs.drawInTitlebar" = true;
+                        "svg.context-properties.content.enabled" = true;
+                        "mozilla.widget.use-argb-visuals" = true;
+
+                        "gnomeTheme.hideSingleTab" = true;
+                        "gnomeTheme.hideWebrtcIndicator" = true;
+                    };
+                    userChrome = ''
+                        @import "firefox-gnome-theme/userChrome.css";
+                        @import "firefox-gnome-theme/theme/colors/dark.css";
+                    '';
+                };
+            };
+            
             git = {
                 enable = true;
                 userName = "nrdsstuff";

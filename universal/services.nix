@@ -23,4 +23,7 @@
     xdg.portal.enable = true;
     hardware.bluetooth.enable = true;
     security.rtkit.enable = true;
+    udev.packages = [
+        pkgs.gnome.gnome-settings-daemon
+    ];
 }
