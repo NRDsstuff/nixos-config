@@ -6,11 +6,19 @@ let
     fastfetch = import ./nrd/fastfetch.nix;
 in
 {
-    imports = [
-        ./nrd/dconf.nix
-    ];
-
-    "${homeConfig}fastfetch/config.jsonc".text = builtins.toJSON fastfetch;
+    # furryfox trash
+    system.activationScripts.firefoxProfile.text = ''
+        if [ -d "/extra" ]; then
+            ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
+        else
+            if [ -d "/home/nrd/.mozilla" ]; then
+                echo "mozilla folder already exists. remove it manually if you want to replace it."
+            else
+                ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
+                ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/*" "/home/nrd/.mozilla/"
+            fi
+        fi
+    '';
 
     # define user
     users.users.nrd = {
@@ -71,23 +79,6 @@ in
         fi
     '';
 
-    # furryfox
-    system.activationScripts.firefoxProfile.text = ''
-        if [ -d "/extra" ]; then
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
-        else
-            if [ -d "/home/nrd/.mozilla" ]; then
-                echo "mozilla folder already exists. remove it manually if you want to replace it."
-            else
-                ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
-                ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/*" "/home/nrd/.mozilla/"
-            fi
-        fi
-    '';
-    "firefox-gnome-theme" = {
-        target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
-        source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
-    };
 
     # install custom icon packs, cursors and wallpapers
     system.activationScripts.themingResourcesNRD.text = ''
@@ -110,6 +101,15 @@ in
         systemd.user.sessionVariables = config.home-manager.users.nrd.home.sessionVariables;
         # never touch this
         home.stateVersion = "23.11";
+
+        # files
+        home.file = {
+            "firefox-gnome-theme" = {
+                target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
+                source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
+            };
+            "${homeConfig}fastfetch/config.jsonc".text = builtins.toJSON fastfetch;
+        };
 
         programs = { 
 
