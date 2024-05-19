@@ -3,7 +3,7 @@ with lib;
 let
     resourceDir = ../../resources;
     homeConfig = ".config/";
-    fastfetch = import ./config/fastfetch.nix;
+    fastfetch = import ./nrd/config/fastfetch.nix;
 in
 {
     imports = [
