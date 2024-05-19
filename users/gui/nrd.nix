@@ -6,6 +6,10 @@ let
     fastfetch = import ./nrd/fastfetch.nix;
 in
 {
+    imports = [
+        ./nrd/dconf.nix
+    ];
+    
     # furryfox trash
     system.activationScripts.firefoxProfile.text = ''
         if [ -d "/extra" ]; then
