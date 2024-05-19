@@ -49,6 +49,7 @@ in
     
     # idk
     environment.systemPackages = with pkgs; [
+        docker
         ffmpeg
         megatools
         unstable.firefoxpwa

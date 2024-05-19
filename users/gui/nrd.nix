@@ -8,7 +8,7 @@ in
     users.users.nrd = {
         isNormalUser = true;
         description = "NRD";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
     };
 
     # make forge STFU
