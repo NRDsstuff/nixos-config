@@ -4,18 +4,15 @@
 {
   general.multithreading = true;
   modules = [
-    {
-      type = "custom";
-      format = "┌───────────────────────────────────────────┐";
-    }
     "break"
     {
       type = "os";
-      key = "  󱄅";
+      key = "      os:";
     }
+    "break"
     {
       type = "kernel";
-      key = "  ";
+      key = "  kernel:";
       format = "{2}";
     }
     # Packages takes forever to load (and probably freeze too)
@@ -25,54 +22,48 @@
     # }
     {
       type = "shell";
-      key = "  ";
+      key = "   shell:";
     }
     {
       type = "de";
-      key = "  ";
-    }
-    {
-      type = "terminal";
-      key = "  󰄛";
-    }
-    "break"
-    {
-      type = "host";
-      key = "  ";
-      format = "{1}";
+      key = "      de:";
     }
     {
       type = "uptime";
-      key = "  󰥔";
+      key = "  uptime:";
     }
+    "break"
     {
       type = "cpu";
-      key = "  ";
+      key = "     cpu:";
       format = "{1}";
     }
     {
       type = "gpu";
-      key = "  󰟽";
+      key = "     gpu:";
     }
     {
       type = "memory";
-      key = "  󰍛";
+      key = "     ram:";
+    }
+    "break"
+    {
+      type = "disk";
+      key = "  system:";
+      format = "{2} ({3})";
+      folders = "/";
     }
     {
       type = "disk";
-      key = "  ";
+      key = "   extra:";
       format = "{2} ({3})";
-      folders = "/";
+      folders = "/extra";
     }
     "break"
     {
       type = "colors";
       symbol = "circle";
       paddingLeft = 16;
-    }
-    {
-      type = "custom";
-      format = "└───────────────────────────────────────────┘";
     }
   ];
   display = {
