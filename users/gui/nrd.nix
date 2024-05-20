@@ -16,10 +16,11 @@ in
             ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
         else
             if [ -d "/home/nrd/.mozilla" ]; then
-                echo "mozilla folder already exists. remove it manually if you want to replace it."
+                ${pkgs.coreutils}/bin/echo "mozilla folder already exists. remove it manually if you want to replace it."
             else
                 ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
-                ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/*" "/home/nrd/.mozilla/"
+                ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/" "/home/nrd/.mozilla/firefox" -r
+                ${pkgs.coreutils}/bin/chmod -R 777 /home/nrd/.mozilla # ugh
             fi
         fi
     '';
@@ -108,10 +109,10 @@ in
 
         # files
         home.file = {
-            "firefox-gnome-theme" = {
-                target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
-                source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
-            };
+            # "firefox-gnome-theme" = {
+            #     target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
+            #     source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
+            # };
             "${homeConfig}fastfetch/config.jsonc".text = builtins.toJSON fastfetch;
         };
 
