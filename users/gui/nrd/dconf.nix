@@ -5,8 +5,10 @@
         dconf.settings = {
 
             "org/gnome/desktop/background" = {
-                picture-uri = "file:///usr/share/backgrounds/Nebula.png";
+                picture-uri = "file:///usr/share/backgrounds/depth%201.png";
+                picture-uri-dark = "file:///usr/share/backgrounds/depth%201.png";
             };
+            
             # keybinds
             "org/gnome/desktop/wm/keybindings" = {
                 activate-window-menu = [ "<Alt>F3" ];
