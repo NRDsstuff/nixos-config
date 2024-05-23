@@ -42,7 +42,6 @@
         ${pkgs.flatpak}/bin/flatpak install flathub com.github.tchx84.Flatseal
         ${pkgs.flatpak}/bin/flatpak install flathub app.drey.EarTag
         ${pkgs.flatpak}/bin/flatpak install flathub io.github.Foldex.AdwSteamGtk
-        ${pkgs.flatpak}/bin/flatpak install flathub org.gnome.gitlab.somas.Apostrophe
         ${pkgs.flatpak}/bin/flatpak install flathub org.nickvision.tubeconverter
         ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
