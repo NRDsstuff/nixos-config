@@ -45,6 +45,18 @@ in
         };
     };
 
+    # figma fonts
+    systemd.services.figmaFonts = {
+        description = "Fix ligma fonts in browser";
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig = {
+            ExecStart = ''
+                ${pkgs.figma-agent}/bin/figma-agent
+            '';
+            RemainAfterExit = true;
+        };
+    };
+
     # forge brain damage fix
     # i have no idea why it breaks like this 
     system.activationScripts.idfk.text = ''

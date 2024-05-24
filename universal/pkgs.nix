@@ -49,6 +49,7 @@ in
     
     # idk
     environment.systemPackages = with pkgs; [
+        figma-agent
         fastfetch
         docker
         ffmpeg
