@@ -45,6 +45,7 @@
         ${pkgs.flatpak}/bin/flatpak install flathub org.nickvision.tubeconverter
         ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
+        ${pkgs.flatpak}/bin/flatpak install flathub de.haeckerfelix.Fragments
     '';
 
     environment.systemPackages = (with pkgs.gnome; [
