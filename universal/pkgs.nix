@@ -27,7 +27,7 @@ in
     '';
     system.activationScripts.universalFlatpakApps.text = ''
         ${pkgs.flatpak}/bin/flatpak install flathub dev.vencord.Vesktop
-        ${pkgs.flatpak}/bin/flatpak install flathub io.github.Figma_Linux.figma_linux
+        # ${pkgs.flatpak}/bin/flatpak install flathub io.github.Figma_Linux.figma_linux # broken rn
         ${pkgs.flatpak}/bin/flatpak install flathub org.telegram.desktop
     '';
 

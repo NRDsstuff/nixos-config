@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+    resourceDir = ../resources;
+in
 {
     # nix programs
     programs = {
@@ -19,6 +22,14 @@
         };
     };
 
+    # figmaaaaaaaaaa
+    system.activationScripts.figmaLauncher.text = ''
+        ${pkgs.coreutils}/bin/mkdir /usr/share/applications
+        ${pkgs.coreutils}/bin/rm -rf /usr/share/applications/figma-linux.desktop
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/software/figma-linux/figma-linux.desktop /usr/share/applications -r
+    '';
+    
+    # cuda
     system.activationScripts.cuda.text = ''
         export CUDA_PATH=${pkgs.cudatoolkit}
         # export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib

@@ -30,6 +30,7 @@ in
         isNormalUser = true;
         description = "NRD";
         extraGroups = [ "networkmanager" "wheel" "docker" ];
+        initialPassword = "NRDeez"; # dw, i'll change it
     };
 
     # make forge STFU
@@ -121,37 +122,10 @@ in
 
         # files
         home.file = {
-            # "firefox-gnome-theme" = {
-            #     target = ".mozilla/firefox/homeconfig/chrome/firefox-gnome-theme";
-            #     source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
-            # };
             "${homeConfig}fastfetch/config.jsonc".text = builtins.toJSON fastfetch;
         };
 
         programs = { 
-
-            # firefox = {
-            #     enable = true;
-            #     profiles.homeconfig = {
-            #         search.privateDefault = "DuckDuckGo";
-            #         name = "Default managed by home-manager";
-            #         settings = {
-            #             "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-
-            #             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-            #             "browser.tabs.drawInTitlebar" = true;
-            #             "svg.context-properties.content.enabled" = true;
-            #             "mozilla.widget.use-argb-visuals" = true;
-
-            #             "gnomeTheme.hideSingleTab" = true;
-            #             "gnomeTheme.hideWebrtcIndicator" = true;
-            #         };
-            #         userChrome = ''
-            #             @import "firefox-gnome-theme/userChrome.css";
-            #             @import "firefox-gnome-theme/theme/colors/dark.css";
-            #         '';
-            #     };
-            # };
             
             git = {
                 enable = true;
