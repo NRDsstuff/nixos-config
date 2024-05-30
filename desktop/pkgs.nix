@@ -24,7 +24,7 @@ in
 
     # figmaaaaaaaaaa
     system.activationScripts.figmaLauncher.text = ''
-        ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications
+        ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications || true
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/figma-linux.desktop
         ${pkgs.coreutils}/bin/cp ${resourceDir}/software/figma-linux/figma-linux.desktop /home/nrd/.local/share/applications -r
     '';

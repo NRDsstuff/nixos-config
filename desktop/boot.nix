@@ -27,6 +27,16 @@
                 efiSupport = true;
                 enable = true;
                 gfxmodeEfi = "1920x1080";
+                extraEntries = ''
+                    menuentry "SapphireOS 11" {
+                        insmod part_gpt
+                        insmod fat
+                        insmod search_fs_uuid
+                        insmod chain
+                        search --fs-uuid --set=root EA26-EBF0
+                        chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+                    }
+                '';
             };
         };
     };

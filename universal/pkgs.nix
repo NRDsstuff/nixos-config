@@ -49,11 +49,11 @@ in
     
     # idk
     environment.systemPackages = with pkgs; [
-        figma-agent
+        (pkgs.php.buildEnv {
+            extraConfig = ''memory_limit = 1024M'';
+        })
         fastfetch
-        docker
         ffmpeg
-        megatools
         unstable.firefoxpwa
         thefuck
         wget
@@ -61,13 +61,13 @@ in
         dconf2nix
         android-tools
         killall
-        gparted
         appimage-run
     ];
     
     # nrd
     users.users.nrd.packages = (with pkgs; [
         # apps
+        gparted
         unzip
         tuba
         nodejs
@@ -80,6 +80,7 @@ in
     ]) ++ (with unstable; [
         # unstable channel
         bun
+        pmbootstrap
     ]);
     
     # SHUT THE FUCK UP
