@@ -37,11 +37,11 @@
 35=t
 36=o
 37=p
-Name=figma-linux
+Name=Select for Figma
 Exec=appimage-run '/extra/nrd/Binaries/figma linux.AppImage'
 Terminal=false
 Type=Application
-Icon=figma-linux
+Icon=select-for-figma
 StartupWMClass=figma-linux
 X-AppImage-Version=0.11.3
 Comment=Unofficial desktop application for linux

@@ -25,8 +25,8 @@ in
     # figmaaaaaaaaaa
     system.activationScripts.figmaLauncher.text = ''
         ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications || true
-        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/figma-linux.desktop
-        ${pkgs.coreutils}/bin/cp ${resourceDir}/software/figma-linux/figma-linux.desktop /home/nrd/.local/share/applications -r
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/select-for-figma.desktop
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/software/figma-linux/select-for-figma.desktop /home/nrd/.local/share/applications -r
     '';
     
     # cuda
