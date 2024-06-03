@@ -74,6 +74,7 @@ in
         zulu8
     ]) ++ (with pkgs.gnomeExtensions; [
         # gnome extensions
+        rounded-window-corners
         extension-list
         alphabetical-app-grid
         forge
@@ -81,7 +82,7 @@ in
         blur-my-shell
         caffeine
         unmess
-        pano
+        # pano
         gsconnect
         mpris-label
         tray-icons-reloaded

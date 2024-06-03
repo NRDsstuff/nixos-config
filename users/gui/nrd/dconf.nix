@@ -57,19 +57,28 @@
 
             # blur my shell
             "org/gnome/shell/extensions/blur-my-shell" = {
-	            sigma = 80; # я сигма
+                settings-version = 2;
+                sigma = 80;
             };
 
             "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
                 style-dialogs = 2;
+                blur = true;
+                sigma = 80;
+                brightness = 0.4;
             };
 
             "org/gnome/shell/extensions/blur-my-shell/applications" = {
-                blur = true;
+                blur = false;
             };
 
             "org/gnome/shell/extensions/blur-my-shell/panel" = {
-                blur = true;
+	            blur=true;
+                brightness = 0.4;
+                force-light-text = false;
+                pipeline = "pipeline_default";
+                sigma=80;
+                static-blur = true;
             };
 
             # tiling yay

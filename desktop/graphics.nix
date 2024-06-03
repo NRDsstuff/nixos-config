@@ -26,9 +26,11 @@
         # Currently alpha-quality/buggy, so false is currently the recommended setting.
         open = false;
 
+
         # enable nvidia-settings
         nvidiaSettings = true;
     };
+    hardware.nvidia.forceFullCompositionPipeline = true;
 
     # Enable OpenGL
     hardware.opengl = {

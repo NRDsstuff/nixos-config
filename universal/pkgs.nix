@@ -67,6 +67,7 @@ in
     # nrd
     users.users.nrd.packages = (with pkgs; [
         # apps
+        yarn
         gparted
         unzip
         tuba
