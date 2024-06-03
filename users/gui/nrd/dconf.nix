@@ -84,7 +84,9 @@
             # tiling yay
             "org/gnome/shell/extensions/forge" = {
                 css-last-update = 37;
+                dnd-center-layout = "swap";
                 focus-border-toggle = false;
+                move-pointer-focus-enabled = false;
                 preview-hint-enabled = false;
                 quick-settings-enabled = false;
                 stacked-tiling-mode-enabled = false;
@@ -131,7 +133,7 @@
                 window-swap-right = [];
                 window-swap-up = [];
                 window-toggle-always-float = [];
-                window-toggle-float = [ "<Super>f" ];
+                window-toggle-float = [ "<Super>f" "<Super>f" ];
                 workspace-active-tile-toggle = [];
             };
 
