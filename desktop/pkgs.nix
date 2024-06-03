@@ -47,7 +47,6 @@ in
     users.users.nrd.packages = (with pkgs; [
         # apps
         trigger-control
-        immersed-vr
         blender
         libsForQt5.kdenlive
         natron
@@ -57,6 +56,7 @@ in
         gst_all_1.gst-plugins-base
         gst_all_1.gst-plugins-good
     ]) ++ (with oldpkgs; [
+        immersed-vr
         # emulators
         citra-nightly
         yuzu-mainline
