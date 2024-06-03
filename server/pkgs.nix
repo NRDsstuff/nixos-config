@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
     unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+    oldpkgs = import <nixos-old> { config = { allowUnfree = true; };};
 in
 {
     imports = [ <home-manager/nixos> ];

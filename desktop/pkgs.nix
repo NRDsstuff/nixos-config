@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
     resourceDir = ../resources;
+    oldpkgs = import <nixos-old> { config = { allowUnfree = true; };};
 in
 {
     # nix programs
@@ -43,7 +44,7 @@ in
     ];
 
     # nrd
-    users.users.nrd.packages = with pkgs; [
+    users.users.nrd.packages = (with pkgs; [
         # apps
         trigger-control
         immersed-vr
@@ -53,21 +54,20 @@ in
         adw-gtk3
         google-cursor
         prismlauncher
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+    ]) ++ (with oldpkgs; [
         # emulators
         citra-nightly
         yuzu-mainline
         dolphin-emu
-        gst_all_1.gst-plugins-base
-        gst_all_1.gst-plugins-good
-    ];
+    ]);
 
     # nrd's bro
     users.users.gutek.packages = (with pkgs; [
         # ŋ
         adw-gtk3
         google-cursor
-        citra-nightly
-        yuzu-mainline
         dolphin-emu
         trigger-control
         prismlauncher
@@ -87,5 +87,8 @@ in
         tray-icons-reloaded
         undecorate
         window-is-ready-remover
+    ]) ++ (with oldpkgs; [
+        citra-nightly
+        yuzu-mainline
     ]);
 }

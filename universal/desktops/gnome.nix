@@ -21,7 +21,6 @@
     ]) ++ (with pkgs.gnome; [
         cheese # webcam tool
         gnome-music
-        gedit # text editor
         epiphany # web browser
         tali # poker game
         iagno # go game
