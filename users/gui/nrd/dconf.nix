@@ -68,9 +68,9 @@
                 brightness = 0.4;
             };
 
-            "org/gnome/shell/extensions/blur-my-shell/applications" = {
-                blur = false;
-            };
+            # "org/gnome/shell/extensions/blur-my-shell/applications" = {
+            #     blur = false;
+            # };
 
             "org/gnome/shell/extensions/blur-my-shell/panel" = {
 	            blur=true;
