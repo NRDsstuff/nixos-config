@@ -1,5 +1,7 @@
 { config, pkgs, modulesPath, ... }: 
-
+let
+    resourceDir = ../../resources;
+in
 {
     # xorg config
     services.xserver = {
@@ -47,6 +49,7 @@
         ${pkgs.flatpak}/bin/flatpak install flathub de.haeckerfelix.Fragments
     '';
 
+    # apps & extensions
     environment.systemPackages = (with pkgs.gnome; [
         gnome-tweaks
         gnome-software
@@ -71,4 +74,9 @@
         undecorate
         window-is-ready-remover
     ]);
+
+    # asuijkndloasuijd
+    system.activationScripts.roundedCorners.text = ''
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/extensions/rounded-window-corners@fxgn /home/nrd/.local/share/gnome-shell/extensions || echo RWC already installed
+    '';
 }
