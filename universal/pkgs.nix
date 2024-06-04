@@ -62,6 +62,7 @@ in
         android-tools
         killall
         appimage-run
+        gsound
     ];
     
     # nrd

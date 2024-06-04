@@ -62,7 +62,9 @@
         blur-my-shell
         caffeine
         unmess
-        pano
+        # broken atm
+        # pano
+        clipboard-history
         gsconnect
         mpris-label
         tray-icons-reloaded

@@ -55,6 +55,12 @@
                 user-enabled = true;
             };
 
+            # clipboard history
+            "org/gnome/shell/extensions/clipboard-history" = {
+                toggle-menu = [ "<Control><Super>v" ];
+                window-width-percentage = 25;
+            };
+
             # blur my shell
             "org/gnome/shell/extensions/blur-my-shell" = {
                 settings-version = 2;
@@ -68,9 +74,11 @@
                 brightness = 0.4;
             };
 
-            # "org/gnome/shell/extensions/blur-my-shell/applications" = {
-            #     blur = false;
-            # };
+            "org/gnome/shell/extensions/blur-my-shell/applications" = {
+                blur = false;
+                blur-on-overview = false;
+                enable-all = false;
+            };
 
             "org/gnome/shell/extensions/blur-my-shell/panel" = {
 	            blur=true;
