@@ -9,7 +9,7 @@
         ./pkgs.nix
         ./synced-folders.nix
         # users
-        ../users/gui/gutek.nix
+        # ../users/gui/gutek.nix
         ../users/gui/nrd.nix
         # other
         ../universal/virtualization.nix

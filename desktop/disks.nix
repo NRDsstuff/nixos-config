@@ -3,13 +3,14 @@
 {
     # my hard drive config
     fileSystems."/" = { 
-        device = "/dev/disk/by-uuid/755aa083-c14d-4416-b748-bfac9ffa811d";
-        fsType = "btrfs";
+        device = "/dev/disk/by-uuid/739f6fea-2c77-4cf3-803b-ffb315e70490";
+        fsType = "ext4";
     };
 
     fileSystems."/boot" = { 
-        device = "/dev/disk/by-uuid/EA26-EBF0";
+        device = "/dev/disk/by-uuid/5F9B-1E4B";
         fsType = "vfat";
+        options = [ "fmask=0022" "dmask=0022" ];
     };
       
     fileSystems."/extra" = { 
@@ -17,5 +18,5 @@
         fsType = "btrfs";
     };
 
-    swapDevices = [ { device = "/dev/disk/by-uuid/33baf819-5392-4cbf-8f8d-cb0e6a17de49"; } ];
+    swapDevices = [ { device = "/dev/disk/by-uuid/01f831d8-9f52-4323-a077-a6db7b547904"; } ];
 }

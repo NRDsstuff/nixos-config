@@ -64,32 +64,32 @@ in
     ]);
 
     # nrd's bro
-    users.users.gutek.packages = (with pkgs; [
-        # ŋ
-        adw-gtk3
-        google-cursor
-        dolphin-emu
-        trigger-control
-        prismlauncher
-        zulu8
-    ]) ++ (with pkgs.gnomeExtensions; [
-        # gnome extensions
-        rounded-window-corners
-        extension-list
-        alphabetical-app-grid
-        forge
-        app-hider
-        blur-my-shell
-        caffeine
-        unmess
-        # pano
-        gsconnect
-        mpris-label
-        tray-icons-reloaded
-        undecorate
-        window-is-ready-remover
-    ]) ++ (with oldpkgs; [
-        citra-nightly
-        yuzu-mainline
-    ]);
+    #users.users.gutek.packages = (with pkgs; [
+    #    # ŋ
+    #    adw-gtk3
+    #    google-cursor
+    #    dolphin-emu
+    #    trigger-control
+    #    prismlauncher
+    #    zulu8
+    #]) ++ (with pkgs.gnomeExtensions; [
+    #    # gnome extensions
+    #    rounded-window-corners
+    #    extension-list
+    #    alphabetical-app-grid
+    #    forge
+    #    app-hider
+    #    blur-my-shell
+    #    caffeine
+    #    unmess
+    #    # pano
+    #    gsconnect
+    #    mpris-label
+    #    tray-icons-reloaded
+    #    undecorate
+    #    window-is-ready-remover
+    #]) ++ (with oldpkgs; [
+    #    citra-nightly
+    #    yuzu-mainline
+    #]);
 }
