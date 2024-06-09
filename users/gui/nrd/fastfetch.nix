@@ -74,4 +74,10 @@
     separator = "  ";
     color = "blue";
   };
+  logo = {
+    color = {
+      "1" = "36";
+      "2" = "34";
+    };
+  };
 }
