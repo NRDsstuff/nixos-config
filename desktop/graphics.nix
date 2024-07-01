@@ -5,7 +5,7 @@
     hardware.nvidia = {
     
         # package
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.production;
 
         # Modesetting is required.
         modesetting.enable = true;

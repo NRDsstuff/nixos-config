@@ -18,6 +18,9 @@ in
                     bumblebee
                     glxinfo
                     openssl_1_1
+                    pango
+                    libthai
+                    harfbuzz
                 ];
             };
         };
