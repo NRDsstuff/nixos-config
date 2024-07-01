@@ -8,6 +8,7 @@
         ./universal/locale.nix
         ./universal/syncthing.nix
         ./universal/misc.nix
+        ./universal/flatpak-fix.nix
 
         # replace desktop with device
         ./desktop/import.nix
