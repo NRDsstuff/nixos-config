@@ -4,7 +4,7 @@
     boot = {
         # kernel modules
         kernelParams = [ "intel_iommu=on" ];
-        initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "uhci_hcd" "ehci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+        initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "uhci_hcd" "ehci_pci" ];
         supportedFilesystems = [ "ntfs" ];
         initrd.kernelModules = [ ];
         kernelModules = [ "kvm-intel" ];
@@ -13,11 +13,6 @@
 
         # bootloader
         loader = {
-            systemd-boot = {
-                enable = false;
-                memtest86.enable = true;
-                consoleMode = "max";
-            };
             efi = {
                 canTouchEfiVariables = true;
                 efiSysMountPoint = "/boot"; 

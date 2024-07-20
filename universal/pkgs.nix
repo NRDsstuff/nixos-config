@@ -2,6 +2,12 @@
 let
     unstable = import <nixos-unstable> { config = { allowUnfree = true; };};
     resourceDir = ./../resources;
+    nix-software-center = import (pkgs.fetchFromGitHub {
+        owner = "snowfallorg";
+        repo = "nix-software-center";
+        rev = "0.1.2";
+        sha256 = "xiqF1mP8wFubdsAQ1BmfjzCgOD3YZf7EGWl9i69FTls=";
+    }) {};
 in
 {
     imports = [ <home-manager/nixos> ];
@@ -80,6 +86,7 @@ in
         zulu8
         libreoffice
         inkscape
+        nix-software-center
     ]) ++ (with unstable; [
         # unstable channel
         bun
@@ -104,15 +111,15 @@ in
     };
 
     # install custom icon packs, cursors and wallpapers
-    system.activationScripts.themingResources.text = ''
-        ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
-        ${pkgs.coreutils}/bin/rm -rf /usr/share/backgrounds
-        ${pkgs.coreutils}/bin/rm -rf /usr/share/themes
-        ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
-        ${pkgs.coreutils}/bin/mkdir -p /usr/share
-        ${pkgs.coreutils}/bin/cp ${resourceDir}/icons /usr/share/icons -r
-        ${pkgs.coreutils}/bin/cp ${resourceDir}/backgrounds /usr/share/backgrounds -r
-        ${pkgs.coreutils}/bin/cp ${resourceDir}/themes /usr/share/themes -r
-        ${pkgs.coreutils}/bin/chmod 777 -R /usr/share # ugh
-    '';
+    # system.activationScripts.themingResources.text = ''
+    #     ${pkgs.coreutils}/bin/rm -rf /usr/share/icons
+    #     ${pkgs.coreutils}/bin/rm -rf /usr/share/backgrounds
+    #     ${pkgs.coreutils}/bin/rm -rf /usr/share/themes
+    #     ${pkgs.coreutils}/bin/mkdir -p /usr # we can never be 100% sure
+    #     ${pkgs.coreutils}/bin/mkdir -p /usr/share
+    #     ${pkgs.coreutils}/bin/cp ${resourceDir}/icons /usr/share/icons -r
+    #     ${pkgs.coreutils}/bin/cp ${resourceDir}/backgrounds /usr/share/backgrounds -r
+    #     ${pkgs.coreutils}/bin/cp ${resourceDir}/themes /usr/share/themes -r
+    #     ${pkgs.coreutils}/bin/chmod 777 -R /usr/share # ugh
+    # '';
 }

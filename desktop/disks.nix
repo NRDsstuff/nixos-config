@@ -14,8 +14,8 @@
     };
       
     fileSystems."/extra" = { 
-        device = "/dev/disk/by-uuid/3d2d4241-1e43-4bdc-859f-08a86ea170c2";
-        fsType = "btrfs";
+        device = "/dev/disk/by-uuid/dc13c33b-0fe0-492c-92cb-2f2bf5302a9a";
+        fsType = "ext4";
     };
 
     swapDevices = [ { device = "/dev/disk/by-uuid/01f831d8-9f52-4323-a077-a6db7b547904"; } ];

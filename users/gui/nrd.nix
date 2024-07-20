@@ -13,15 +13,18 @@ in
     # furryfox trash
     system.activationScripts.firefoxProfile.text = ''
         if [ -d "/extra" ]; then
-            ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
-        else
+            # ${pkgs.coreutils}/bin/rm -rf /home/nrd/.mozilla && ${pkgs.coreutils}/bin/ln -s /extra/nrd/.mozilla /home/nrd/.mozilla
             if [ -d "/home/nrd/.mozilla" ]; then
-                ${pkgs.coreutils}/bin/echo "mozilla folder already exists. remove it manually if you want to replace it."
+                ${pkgs.coreutils}/bin/rm -rf /extra/nrd/.mozilla
+                ${pkgs.coreutils}/bin/cp -r "/home/nrd/.mozilla" "/extra/nrd/.mozilla"
             else
-                ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
-                ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/" "/home/nrd/.mozilla/firefox" -r
-                ${pkgs.coreutils}/bin/chmod -R 777 /home/nrd/.mozilla # ugh
+                # ${pkgs.coreutils}/bin/mkdir "/home/nrd/.mozilla/"
+                # ${pkgs.coreutils}/bin/cp "${resourceDir}/firefox/" "/home/nrd/.mozilla/firefox" -r
+                # ${pkgs.coreutils}/bin/chmod -R 777 /home/nrd/.mozilla # ugh
+                echo "no .mozilla"
             fi
+        else
+            echo "no /extra"
         fi
     '';
 

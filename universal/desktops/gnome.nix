@@ -47,6 +47,8 @@ in
         ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
         ${pkgs.flatpak}/bin/flatpak install flathub de.haeckerfelix.Fragments
+        ${pkgs.flatpak}/bin/flatpak install flathub com.github.qarmin.czkawka
+        ${pkgs.flatpak}/bin/flatpak install flathub com.github.neithern.g4music
     '';
 
     # apps & extensions
@@ -57,7 +59,7 @@ in
         quadrapassel
     ]) ++ (with pkgs.gnomeExtensions; [
         # gnome extensions
-        just-perfection
+        # just-perfection
         extension-list
         alphabetical-app-grid
         forge
