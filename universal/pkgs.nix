@@ -58,7 +58,7 @@ in
         (pkgs.php.buildEnv {
             extraConfig = ''memory_limit = 1024M'';
         })
-        youtube-dl
+        yt-dlp
         fastfetch
         ffmpeg
         unstable.firefoxpwa
