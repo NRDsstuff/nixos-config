@@ -97,6 +97,7 @@ in
     nixpkgs.config.permittedInsecurePackages = [
         "electron-25.9.0" 
         "openssl-1.1.1w"
+        "python3.11-youtube-dl-2021.12.17"
     ];
     
     # fonts lol

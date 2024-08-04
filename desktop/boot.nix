@@ -9,7 +9,7 @@
         initrd.kernelModules = [ ];
         kernelModules = [ "kvm-intel" ];
         extraModulePackages = [ ];
-        kernelPackages = pkgs.linuxPackages_latest; 
+        # kernelPackages = pkgs.linuxPackages_latest; 
 
         # bootloader
         loader = {
