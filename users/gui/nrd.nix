@@ -32,7 +32,7 @@ in
     users.users.nrd = {
         isNormalUser = true;
         description = "NRD";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" ];
         initialPassword = "NRDeez"; # dw, i'll change it
     };
 
