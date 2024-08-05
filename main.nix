@@ -9,6 +9,7 @@
         ./universal/syncthing.nix
         ./universal/misc.nix
         ./universal/flatpak-fix.nix
+        ./universal/housekeeping.nix
 
         # replace desktop with device
         ./desktop/import.nix
