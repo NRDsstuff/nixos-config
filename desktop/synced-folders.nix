@@ -41,6 +41,6 @@
             id = "6dovv-1tpo9";
             path = "/home/nrd/Documents/books";
             devices = [ "jabe tefaxyn" "jabe quest" ];
-        }
+        };
     };
 }
