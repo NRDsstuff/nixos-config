@@ -37,5 +37,10 @@
             path = "/home/nrd/Documents/obsidian/kulup.mp3";
             devices = [ "jabe tefaxyn" "jabe spes" "ralue proseros" "ralue tefaxyn" "jabe tablet" "jabe macbook" ];
         };
+        "obsidian books" = {
+            id = "6dovv-1tpo9";
+            path = "/home/nrd/Documents/books";
+            devices = [ "jabe tefaxyn" "jabe quest" ];
+        }
     };
 }

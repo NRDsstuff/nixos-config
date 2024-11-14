@@ -20,11 +20,15 @@
     # firewall
     networking.firewall = {
         enable = true;
-        # for kde connect 
+        # for kde connect and desktop streaming
         allowedTCPPortRanges = [
             {
                 from = 1716;
                 to = 1764;
+            }
+            {
+                from = 3131;
+                to = 3131;
             }
             {
                 from = 25555;
@@ -35,6 +39,10 @@
             {
                 from = 1716;
                 to = 1764;
+            }
+            {
+                from = 3131;
+                to = 3131;
             }
             {
                 from = 25555;

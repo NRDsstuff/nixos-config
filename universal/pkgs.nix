@@ -80,13 +80,12 @@ in
         unzip
         tuba
         nodejs
-        lollypop
         obsidian
         vscode
         zulu8
         libreoffice
         inkscape
-        nix-software-center
+        # nix-software-center
     ]) ++ (with unstable; [
         # unstable channel
         bun
