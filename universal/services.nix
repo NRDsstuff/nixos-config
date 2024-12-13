@@ -10,7 +10,6 @@
     services.printing.enable = true;
     
     # audio
-    sound.enable = true;
     hardware.pulseaudio.enable = false;
     services.pipewire = {
         enable = true;

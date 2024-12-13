@@ -3,11 +3,6 @@
     home-manager.users.nrd = { pkgs, ... }: {
         # yes
         dconf.settings = {
-
-            "org/gnome/desktop/background" = {
-                picture-uri = "file:///usr/share/backgrounds/Vertical%20Thinking%20-%20Purple.png";
-                picture-uri-dark = "file:///usr/share/backgrounds/Vertical%20Thinking%20-%20Purple.png";
-            };
             
             # keybinds
             "org/gnome/desktop/wm/keybindings" = {

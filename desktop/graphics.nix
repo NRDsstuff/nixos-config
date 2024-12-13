@@ -32,11 +32,7 @@
     hardware.nvidia.forceFullCompositionPipeline = true;
 
     # Enable OpenGL
-    hardware.opengl = {
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-    };
+    hardware.graphics.enable = true;
 
     # enable drivers
     services.xserver.videoDrivers = [ "nvidia" ];

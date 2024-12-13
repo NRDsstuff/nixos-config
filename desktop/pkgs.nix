@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
     resourceDir = ../resources;
-    oldpkgs = import <nixos-old> { config = { allowUnfree = true; };};
+    n2311 = import <n2311> { config = { allowUnfree = true; };};
 in
 {
     # nix programs
@@ -65,7 +65,7 @@ in
         # disabled due to broken behavior 2.7.2024
         # blender
         # natron
-    ]) ++ (with oldpkgs; [
+    ]) ++ (with n2311; [
         # emulators
         citra-nightly
         yuzu-mainline

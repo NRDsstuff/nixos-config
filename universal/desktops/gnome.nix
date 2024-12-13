@@ -20,7 +20,6 @@ in
         gnome-tour
         snapshot
         gnome-console
-    ]) ++ (with pkgs.gnome; [
         cheese # webcam tool
         gnome-music
         epiphany # web browser
@@ -28,6 +27,8 @@ in
         iagno # go game
         hitori # sudoku game
         atomix # puzzle game
+    ]) ++ (with pkgs.gnome; [
+        
     ]);
 
     # qt theme 
@@ -44,15 +45,13 @@ in
         ${pkgs.flatpak}/bin/flatpak install flathub app.drey.EarTag
         ${pkgs.flatpak}/bin/flatpak install flathub io.github.Foldex.AdwSteamGtk
         ${pkgs.flatpak}/bin/flatpak install flathub org.nickvision.tubeconverter
-        ${pkgs.flatpak}/bin/flatpak install flathub io.bassi.Amberol
         ${pkgs.flatpak}/bin/flatpak install flathub com.raggesilver.BlackBox
         ${pkgs.flatpak}/bin/flatpak install flathub de.haeckerfelix.Fragments
-        ${pkgs.flatpak}/bin/flatpak install flathub com.github.qarmin.czkawka
         ${pkgs.flatpak}/bin/flatpak install flathub com.github.neithern.g4music
     '';
 
     # apps & extensions
-    environment.systemPackages = (with pkgs.gnome; [
+    environment.systemPackages = (with pkgs; [
         gnome-tweaks
         gnome-software
         dconf-editor
