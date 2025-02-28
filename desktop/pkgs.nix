@@ -32,6 +32,18 @@ in
         ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/select-for-figma.desktop
         ${pkgs.coreutils}/bin/cp ${resourceDir}/software/figma-linux/select-for-figma.desktop /home/nrd/.local/share/applications -r
     '';
+    # cursor
+    system.activationScripts.cursor.text = ''
+        ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications || true
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/cursor.desktop
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/software/cursor/cursor.desktop /home/nrd/.local/share/applications -r
+    '';
+    # librewolf but prettier
+    system.activationScripts.librewolf.text = ''
+        ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications || true
+        ${pkgs.coreutils}/bin/rm -rf /home/nrd/.local/share/applications/librewolf.desktop
+        ${pkgs.coreutils}/bin/cp ${resourceDir}/software/librewolf/librewolf.desktop /home/nrd/.local/share/applications -r
+    '';
 
     # steam
     system.activationScripts.steam.text = ''
