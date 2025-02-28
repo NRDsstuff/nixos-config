@@ -26,6 +26,11 @@ in
         # };
     };
 
+    # Set LibreWolf as the default browser
+    xdg.mime.defaultApplications."text/html" = "librewolf.desktop";
+    xdg.mime.defaultApplications."x-scheme-handler/http" = "librewolf.desktop";
+    xdg.mime.defaultApplications."x-scheme-handler/https" = "librewolf.desktop";
+
     # figmaaaaaaaaaa
     system.activationScripts.figmaLauncher.text = ''
         ${pkgs.coreutils}/bin/mkdir /home/nrd/.local/share/applications || true
