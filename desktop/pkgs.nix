@@ -62,6 +62,7 @@ in
         prismlauncher
         gst_all_1.gst-plugins-base
         gst_all_1.gst-plugins-good
+        unityhub
         # disabled due to broken behavior 2.7.2024
         # blender
         # natron

@@ -18,5 +18,11 @@
         fsType = "ext4";
     };
 
+    fileSystems."/wingames" = { 
+        device = "/dev/disk/by-uuid/E6DE4CEEDE4CB897";
+        fsType = "ntfs-3g"; 
+        options = [ "rw" ];
+    };
+
     swapDevices = [ { device = "/dev/disk/by-uuid/01f831d8-9f52-4323-a077-a6db7b547904"; } ];
 }

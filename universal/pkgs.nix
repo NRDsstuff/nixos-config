@@ -58,6 +58,7 @@ in
         (pkgs.php.buildEnv {
             extraConfig = ''memory_limit = 1024M'';
         })
+        librewolf
         yt-dlp
         fastfetch
         ffmpeg

@@ -37,10 +37,15 @@
             path = "/home/nrd/Documents/obsidian/kulup.mp3";
             devices = [ "jabe tefaxyn" "jabe mi11t" "jabe spes" "ralue proseros" "ralue tefaxyn" "jabe tablet" "jabe macbook" ];
         };
-        "obsidian books" = {
+        "books" = {
             id = "6dovv-1tpo9";
             path = "/home/nrd/Documents/books";
             devices = [ "jabe tefaxyn" "jabe mi11t" "jabe quest" ];
+        };
+        "obsidian project wyfoma" = {
+            id = "xp4uk-a3eyb";
+            path = "/home/nrd/Documents/obsidian/wyfoma";
+            devices = [ "jabe tefaxyn" "jabe quest" "jabe macbook" ];
         };
     };
 }
